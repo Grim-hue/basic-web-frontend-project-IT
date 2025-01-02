@@ -21,6 +21,7 @@ toggleDarkMode.addEventListener("click", () => {
     body.classList.toggle("dark-mode");
     //chages between moon and sun icon
     if(document.querySelector(".dark-mode")!=null){
+        console.log(document.querySelector(".dark-mode"));
         document.querySelector("#moon-sun").classList.remove("bxs-moon") 
         document.querySelector("#moon-sun").classList.add("bxs-sun") 
     }else {

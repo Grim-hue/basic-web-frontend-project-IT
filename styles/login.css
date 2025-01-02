@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+
+/* Define global variables */
+:root {
+    --font-family: 'Poppins', sans-serif;
+
+    /* Light Mode Colors */
+    --color-light-bg: #fff;
+    --color-light-primary: #4070f4;
+    --color-light-secondary: #f7f7f7;
+    --color-light-gray: #707070;
+    --color-light-overlay: rgba(0, 0, 0, 0.3);
+    --color-light-shadow: rgba(0, 0, 0, 0.1);
+
+    /* Dark Mode Colors */
+    --color-dark-bg: #121212;
+    --color-dark-primary: #bb86fc;
+    --color-dark-secondary: #474747;
+    --color-dark-gray: #e0e0e0;
+    --color-dark-overlay: rgba(255, 255, 255, 0.3);
+
+    /* Common Colors */
+    --color-error-bg: #f8d7da;
+    --color-error-border: #f5c6cb;
+    --color-error-text: #721c24;
+    --color-button-bg: #333;
+    --color-button-text: #fff;
+    --color-border: #e6e6e6;
+    --color-input-border: #ccc;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: var(--color-light-secondary);
+    padding: 0 10px;
+}
+/* Wrapper Styling */
+.wrapper{
+    background: var(--color-light-bg);
+    max-width: 450px;
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
+                0 32px 64px -48px rgba(0,0,0,0.5);
+}
+
+/* Form Styling */
+.form{
+    padding: 25px 30px;
+}
+.form header{
+    font-size: 25px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--color-border);
+}
+.form form{
+    margin: 20px 0;
+}
+
+/* Error Text Styling */
+.form form .error-text{
+    color: var(--color-error-text);
+    padding: 8px 10px;
+    text-align: center;
+    border-radius: 5px;
+    background: var(--color-error-bg);
+    border: 1px solid var(--color-error-border);
+    margin-bottom: 10px;
+    display: none;
+}
+
+/* Field Layout */
+.form form .name-details{
+    display: flex;
+}
+.form .name-details .field:first-child{
+    margin-right: 10px;
+}
+.form .name-details .field:last-child{
+    margin-left: 10px;
+}
+
+/* Input Field Styling */
+.form form .field{
+    display: flex;
+    margin-bottom: 10px;
+    flex-direction: column;
+    position: relative;
+}
+.form form .field label{
+    margin-bottom: 2px;
+}
+.form form .input input{
+    height: 40px;
+    width: 100%;
+    font-size: 16px;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid var(--color-input-border);
+}
+.form form .field input{
+    outline: none;
+}
+
+/* Button Styling */
+.form form .button input{
+    height: 45px;
+    border: none;
+    color: var(--color-button-text);
+    font-size: 17px;
+    background: var(--color-button-bg);
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 13px;
+}
+
+/* Password Visibility Icon */
+.form form .field i{
+    position: absolute;
+    right: 15px;
+    top: 70%;
+    color: var(--color-input-border);
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+.form form .field i.active::before{
+    color: var(--color-button-bg);
+    content: "\f070";
+}
+
+/* Link Styling */
+.form .link{
+    text-align: center;
+    margin: 10px 0;
+    font-size: 17px;
+}
+.form .link a{
+    color: var(--color-button-bg);
+}
+.form .link a:hover{
+    text-decoration: underline;
+}
