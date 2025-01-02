@@ -31,9 +31,3 @@ This is a basic web frontend project created as part of the **Tecnologias da Int
 Make sure you have the following installed:
 - A modern web browser (Google Chrome, Firefox, Safari, etc.)
 - A code editor (Visual Studio Code, Sublime Text, etc.)
-
-### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/web-frontend-project.git

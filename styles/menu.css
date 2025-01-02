@@ -1,0 +1,213 @@
+/* Define color variables */
+:root {
+    /* Light Mode Colors */
+    --color-light-bg: #fff;
+    --color-light-primary: #4070f4;
+    --color-light-secondary: #e2e2e2;
+    --color-light-gray: #707070;
+    --color-light-overlay: rgba(0, 0, 0, 0.3);
+    --color-light-shadow: rgba(0, 0, 0, 0.1);
+
+    /* Dark Mode Colors */
+    --color-dark-bg: #121212;
+    --color-dark-primary: #bb86fc;
+    --color-dark-secondary: #474747;
+    --color-dark-gray: #e0e0e0;
+    --color-dark-overlay: rgba(255, 255, 255, 0.3);
+}
+
+/* Google Fonts - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    min-height: 100%;
+    background: var(--color-light-secondary);
+    transition: all 0.3s;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: var(--color-light-bg);
+    box-shadow: 0 0 1px var(--color-light-shadow);
+    justify-content: space-between;
+    transition: all 0.3s;
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+    margin: 0 24px;
+}
+
+.logo .menu-icon {
+    color: var(--color-light-gray);
+    font-size: 24px;
+    margin-right: 14px;
+    cursor: pointer;
+}
+
+.logo .logo-name {
+    color: var(--color-light-gray);
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.toggle-button{
+    font-size: large;
+    border-radius: 25px;
+    padding: 8px;
+    background: #e9e9e9;
+    border-color: #ffffff;
+    border-radius: 100px;
+    border: 0px solid #3a3a3a;
+    margin-right: 13px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    cursor: pointer;
+}
+.toggle-button:hover i{
+    animation: tada 1.5s ease;
+}
+
+nav .sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    width: 260px;
+    padding: 20px 0;
+    background-color: var(--color-light-bg);
+    box-shadow: 0 5px 1px var(--color-light-shadow);
+    transition: all 0.4s ease;
+}
+
+nav.open .sidebar {
+    left: 0;
+}
+
+.sidebar .sidebar-content {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 16px;
+}
+
+.sidebar-content .list {
+    list-style: none;
+}
+
+.list .nav-link {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+    padding: 14px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.lists .nav-link:hover {
+    background-color: var(--color-light-primary);
+}
+
+.nav-link .icon {
+    margin-right: 14px;
+    font-size: 20px;
+    color: var(--color-light-gray);
+}
+
+.nav-link .link {
+    font-size: 16px;
+    color: var(--color-light-gray);
+    font-weight: 400;
+}
+
+.lists .nav-link:hover .icon,
+.lists .nav-link:hover .link {
+    color: var(--color-light-bg);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 1000vh;
+    width: 200%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease;
+    background: var(--color-light-overlay);
+}
+
+nav.open~.overlay {
+    opacity: 1;
+    left: 260px;
+    pointer-events: auto;
+}
+
+/* Dark mode */
+
+body.dark-mode {
+    background: var(--color-dark-secondary);
+    nav {
+        background-color: var(--color-dark-bg);
+    }
+
+    nav .logo .menu-icon, .logo .logo-name {
+        color: var(--color-dark-gray);
+    }
+
+    nav .sidebar {
+        background-color: var(--color-dark-bg);
+    }
+
+    .nav-link .icon,
+    .nav-link .link {
+        color: var(--color-dark-gray);
+    }
+
+    .lists .nav-link:hover {
+        background-color: var(--color-dark-primary);
+    }
+
+    .overlay {
+        background: var(--color-dark-overlay);
+    }
+
+}
+
+/*Moon animation*/
+
+@keyframes Moontada {
+    from {
+        transform: scale3d(1,1,1)
+    }
+
+    10%,20% {
+        transform: scale3d(.95,.95,.95) rotate3d(0,0,1,-10deg)
+    }
+
+    30%,50%,70%,90% {
+        transform: scale3d(1,1,1) rotate3d(0,0,1,10deg)
+    }
+
+    40%,60%,80% {
+        transform: rotate3d(0,0,1,-10deg)
+    }
+
+    to {
+        transform: scale3d(1,1,1)
+    }
+}
