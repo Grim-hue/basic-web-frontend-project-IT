@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/chat.css" />
+    <!-- Boxicons -->
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Container for sidebar/menu -->
+    <nav id="sidebar-container">
+        <div class="logo">
+            <i class="bx bx-menu menu-icon"></i>
+            <span class="logo-name">Echo Link</span>
+        </div>
+        <div>
+            <button id="dark-mode-toggle" class="bx toggle-button"><i id="moon-sun" class="bx bxs-moon"></i></button>
+        </div>
+        <!-- In the menu -->
+        <div class="sidebar">
+            <div class="logo">
+                <i class="bx bx-menu menu-icon"></i>
+                <span class="logo-name">Echo Link</span>
+            </div>
+
+            <div class="sidebar-content">
+                <ul class="lists">
+                    <li class="list">
+                        <a href="index.html" class="nav-link">
+                            <i class="bx bx-home-alt icon"></i>
+                            <span class="link">Home</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="#" class="nav-link">
+                            <i class="bx bx-bell icon"></i>
+                            <span class="link">Notifications</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="chat.html" class="nav-link">
+                            <i class="bx bx-message-rounded icon"></i>
+                            <span class="link">Messages</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="#" class="nav-link">
+                            <i class="bx bx-heart icon"></i>
+                            <span class="link">Likes</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="bottom-content">
+                    <li class="list">
+                        <a href="#" class="nav-link">
+                            <i class="bx bx-cog icon"></i>
+                            <span class="link">Settings</span>
+                        </a>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Menu Overlay -->
+    <section class="overlay"></section>
+
+    <!------------main--------------->
+
+    <div class="main">
+
+        <!------------------left------------------->
+
+        <div class="left">
+
+        </div>
+
+        <!------------center---------------------->
+
+        <div class="chat-box">
+            <div class="chat-wrapper">
+                <div class="massages">
+                    <div class="contact">
+                        <a href="#" style="text-decoration: none;" >
+                            <button class="contact-btn">
+                                <div class="flex-center">
+                                    <img src="../images/profile_2.png" />
+                                    <p>Lorem Ipsum</p>
+                                </div>
+                            </button>
+                        </a>
+                    </div>
+                    <div class="contact selected">
+                        <a href="#" style="text-decoration: none;" >
+                            <button class="contact-btn">
+                                <div class="flex-center">
+                                    <img src="../images/profile_2.png" />
+                                    <p>Lorem Ipsum</p>
+                                </div>
+                            </button>
+                        </a>
+                    </div>
+                    <div class="contact">
+                        <a href="#" style="text-decoration: none;" >
+                            <button class="contact-btn">
+                                <div class="flex-center">
+                                    <img src="../images/profile_2.png" />
+                                    <p>Lorem Ipsum</p>
+                                </div>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <hr class="vertical">
+                <div class="main-chat">
+                    <div class="text">
+                        <div>
+                            <div class="message-box-left">Hey, have you checked out the new project updates? 😊</div>
+                        </div>
+                        <div class="right-box">
+                            <div class="message-box-right">Not yet! Are there any significant changes?</div>
+                        </div>
+                        <div>
+                            <div class="message-box-left">Yes, they added a new module for better task management and streamlined notifications.</div>
+                        </div>
+                        <div>
+                            <div class="message-box-left">Also, the UI has been slightly revamped for better usability.</div>
+                        </div>
+                        <div class="right-box">
+                            <div class="message-box-right">That sounds great! I always felt the notifications were a bit clunky before.</div>
+                        </div>
+                        <div>
+                            <div class="message-box-left">Exactly. Now you can customize them based on priority, which is super handy.</div>
+                        </div>
+                        <div class="right-box">
+                            <div class="message-box-right">Oh, I like that! I’ll check it out after this meeting. Anything else worth noting?</div>
+                        </div>
+                        <div>
+                            <div class="message-box-left">Yes, they’ve also integrated a new analytics dashboard. It gives real-time data insights.</div>
+                        </div>
+                        <div>
+                            <div class="message-box-left">You can track project milestones and performance metrics in one place now.</div>
+                        </div>
+                        <div class="right-box">
+                            <div class="message-box-right">Wow, that’s impressive! Looks like they’ve really upped their game with this update.</div>
+                        </div>
+                        <div>
+                            <div class="message-box-left">Definitely. The team worked hard on this release. You should explore it when you have time.</div>
+                        </div>
+                        <div class="right-box">
+                            <div class="message-box-right">Will do. Thanks for the heads-up! Let me know if you come across any other interesting features.</div>
+                        </div>
+                        <div>
+                            <div class="message-box-left">Sure thing! Let’s catch up later to discuss how we can leverage these updates in our workflow.</div>
+                        </div>
+                        <div class="right-box">
+                            <div class="message-box-right">Sounds like a plan. Talk soon! 👍</div>
+                        </div>
+                    </div>
+                    <hr style="margin-bottom: 10px;">
+                    <form action="#" id="frm2" method="post" enctype="application/x-www-form-urlencoded">
+                        <div class="message-bar-wrapper">
+                            <img src="../images/profile.png" class="icon">
+                            <box-icon name='paper-plane' type='solid' ></box-icon>
+                            <input class="message-bar" type="text" name="echos" id="echos" placeholder="What's on you mind ?"><i class="bx bxs-paper-plane send-icon"></i></input>
+                            
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            
+
+
+
+
+
+
+
+        </div>
+    </div>
+    <script src="../scripts/menu-script.js"></script>
+</body>
+
+</html>

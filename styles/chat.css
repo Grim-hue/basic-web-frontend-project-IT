@@ -1,0 +1,150 @@
+.chat-box {
+    height: auto;
+    padding: 20px 20px 0 20px;
+    background: #f5f5f5;
+    width: 100%;
+
+}
+
+.chat-wrapper {
+    width: 100%;
+    height: auto;
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
+    margin: 10px 0;
+    display: flex;
+}
+
+.message-bar-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.right-box {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.message-box-left {
+    max-width: 70%;
+    width: max-content;
+    padding: 10px;
+    margin-left: 10px;
+    border: 0;
+    outline: none;
+    background: #ffffff;
+    border-radius: 20px;
+    font-size: 17px;
+    margin-bottom: 7px;
+    box-shadow: 3px 6px 8px 0px var(--color-light-shadow);
+}
+
+.message-box-right {
+    max-width: 70%;
+    width: max-content;
+    padding: 10px;
+    margin-right: 10px;
+    border: 0;
+    outline: none;
+    background: #4093f4;
+    border-radius: 20px;
+    font-size: 17px;
+    margin-bottom: 7px;
+    box-shadow: -2px 9px 11px 0px var(--color-light-shadow);
+    color: white;
+}
+
+.text {
+    background: #f8f8f8;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.vertical {
+    border: none;
+    border-left: 1px solid hsl(0deg 0% 83.79%);
+    height: 89vh;
+    width: 1px;
+}
+
+hr {
+    border: none;
+    border-bottom: 1px solid hsl(0deg 0% 83.79%);
+}
+
+.massages {
+    width: 16%;
+    background: #fff;
+    border-radius: 7px;
+}
+
+.contact {
+    padding: 0px 15px 0px 15px;
+}
+
+.contact:hover {
+    background: #ededed;
+}
+
+.selected {
+    background: #e3e3e3;
+}
+
+.contact-btn {
+    border-style: none;
+    background-color: transparent;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: space-between;
+}
+
+.massages .contact .contact-btn .flex-center img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    margin: 8px 15px 8px 6px;
+}
+
+.main-chat {
+    width: 100%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+}
+
+.message-bar-wrapper .icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-left: 10px;
+    object-fit: cover;
+    object-position: center;
+
+}
+
+.message-bar {
+    width: 95%;
+    padding: 10px;
+    margin-left: 10px;
+    border: 0;
+    outline: none;
+    background: #efefef;
+    border-radius: 30px;
+    font-size: 17px;
+}
+.send-icon{
+    font-size: 25px;
+    position: relative;
+    cursor: pointer;
+    right: 35px;
+}
