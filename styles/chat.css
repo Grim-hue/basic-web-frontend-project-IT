@@ -1,3 +1,4 @@
+
 .chat-box {
     height: auto;
     padding: 20px 20px 0 20px;
@@ -59,9 +60,10 @@
 .text {
     background: #f8f8f8;
     display: flex;
-    height: 100%;
+    height: 83vh;
     flex-direction: column;
-    justify-content: flex-end;
+    overflow-y: scroll;
+    padding-top: 15px;
 }
 
 .vertical {
@@ -146,5 +148,120 @@ hr {
     font-size: 25px;
     position: relative;
     cursor: pointer;
-    right: 35px;
+    right: 38px;
+}
+body.dark-mode {
+
+    .chat-box {
+        background: var(--color-dark-bg);
+
+    }
+    
+    .chat-wrapper {
+        background: var(--color-dark-secondary);
+    }
+    
+
+    .message-box-left {
+        background: #ffffff;
+        
+    }
+    
+    .message-box-right {
+        background: #4093f4;
+        color: white;
+    }
+    
+    .text {
+        background: var(--color-comment-background-hover);
+    }
+    .contact-btn{
+        color: var(--color-dark-gray);
+    }
+    hr {
+        border-bottom: 1px solid var(--color-comment-background);
+        opacity: 0.2;
+    }
+    .vertical{
+        border-bottom: 1px solid var(--color-comment-background);
+        opacity: 0.2;
+    }
+    .massages {
+        background: var(--color-dark-secondary);;
+    }
+    
+    .contact:hover {
+        background: var(--color-comment-background-hover);
+        color: var(--color-dark-gray);
+    }
+    
+    .selected {
+        background: var(--color-comment-background);
+    }
+    
+    .message-bar {
+
+        background: var(--color-comment-background);
+  
+    }
+
+    .overlay {
+        background: var(--color-dark-overlay);
+    }
+    .main, .center{
+        background-color: var(--color-dark-bg);
+    }
+    .main .center .my-post {
+        background: var(--color-dark-secondary);
+        color: var(--color-dark-gray);
+    }
+    .main .center .friend-post {
+        background: var(--color-dark-secondary);
+        color: var(--color-dark-gray);
+    }
+    .main .center .my-post .search-top input {
+        background: var(--color-comment-background);
+    }
+    
+    .main .center .my-post .search-top input:hover {
+        background: var(--color-comment-background-hover);
+    }
+    
+    
+    .main .center .my-post .post-bottom .post-icon:hover {
+        background: var(--color-dark-primary);
+    }
+
+    .main .center .friend-post .commen-warpper .comment-search {
+        background: var(--color-comment-background);
+    }
+    .main .center .friend-post .commen-warpper .comment-search i {
+        padding: 0 5px;
+        background: var(--color-dark-overlay) !important;
+    }
+
+    .main .right {
+        background: var(--color-dark-secondary);
+        color: var(--color-dark-gray);
+    }
+
+    .main .right::-webkit-scrollbar-thumb {
+        background:var(--color-dark-gray);;
+    }
+    
+    .main .right:hover::-webkit-scrollbar-thumb {
+        background:var(--color-dark-gray);;
+    }
+
+    
+    .main .right .third_warpper .contact:hover {
+        background-color: var(--color-comment-background-hover);
+    }
+    .main .right .third_warpper .contact .contact-btn{
+        color: var(--color-dark-gray);
+    }
+    .send-icon{
+        color: var(--color-dark-gray);
+    }
+
 }
