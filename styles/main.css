@@ -402,12 +402,12 @@ nav.open~.overlay {
 /*-----------------friend-post---------------*/
 
 
-.main .center .friend-post .commen-warpper {
+.main .center .friend-post .comment-wrapper {
     display: flex;
     align-items: center;
 }
 
-.main .center .friend-post .commen-warpper img {
+.main .center .friend-post .comment-wrapper img {
     width: 35px;
     height: 35px;
     border-radius: 50%;
@@ -416,7 +416,7 @@ nav.open~.overlay {
     margin-right: 15px;
 }
 
-.main .center .friend-post .commen-warpper .circle {
+.main .center .friend-post .comment-wrapper .circle {
     width: 10px;
     height: 10px;
     border-radius: 50%;
@@ -427,7 +427,7 @@ nav.open~.overlay {
     right: 25px;
 }
 
-.main .center .friend-post .commen-warpper .comment-search {
+.main .center .friend-post .comment-wrapper .comment-search {
     width: 95%;
     padding: 5px 15px;
     background: #efefef;
@@ -435,7 +435,7 @@ nav.open~.overlay {
     border-radius: 30px;
 }
 
-.main .center .friend-post .commen-warpper .comment-search input {
+.main .center .friend-post .comment-wrapper .comment-search input {
     width: 85%;
     height: 30px;
     background: none;
@@ -443,7 +443,7 @@ nav.open~.overlay {
     outline: none;
 }
 
-.main .center .friend-post .commen-warpper .comment-search i {
+.main .center .friend-post .comment-wrapper .comment-search i {
     padding: 0 5px;
     color: #919191;
 }
@@ -484,23 +484,23 @@ nav.open~.overlay {
 }
 
 
-.main .right .third_warpper .contact_tag {
+.main .right .right-warpper .contact-title {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.main .right .third_warpper .contact_tag h2 {
+.main .right .right-warpper .contact-title h2 {
     font-size: 18px;
     margin: 5px 0;
 }
 
-.main .right .third_warpper .contact:hover {
+.main .right .right-warpper .contact:hover {
     background: #e3e3e3;
     border-radius: 25px;
 }
 
-.main .right .third_warpper .contact .contact-btn {
+.main .right .right-warpper .contact .contact-btn {
     border-style: none;
     background-color: transparent;
     width: 100%;
@@ -510,7 +510,7 @@ nav.open~.overlay {
     justify-content: space-between;
 }
 
-.main .right .third_warpper .contact img {
+.main .right .right-warpper .contact img {
     width: 45px;
     height: 45px;
     object-fit: cover;
@@ -520,11 +520,11 @@ nav.open~.overlay {
 
 }
 
-.main .right .third_warpper .contact p {
+.main .right .right-warpper .contact p {
     font-size: 16px;
 }
 
-.main .right .third_warpper .contact i {
+.main .right .right-warpper .contact i {
     margin-right: 10px;
     font-size: 21px;
 }
@@ -584,10 +584,10 @@ body.dark-mode {
         background: var(--color-dark-primary);
     }
 
-    .main .center .friend-post .commen-warpper .comment-search {
+    .main .center .friend-post .comment-wrapper .comment-search {
         background: var(--color-comment-background);
     }
-    .main .center .friend-post .commen-warpper .comment-search i {
+    .main .center .friend-post .comment-wrapper .comment-search i {
         padding: 0 5px;
         background: var(--color-dark-overlay) !important;
     }
@@ -606,10 +606,10 @@ body.dark-mode {
     }
 
     
-    .main .right .third_warpper .contact:hover {
+    .main .right .right-warpper .contact:hover {
         background-color: var(--color-comment-background-hover);
     }
-    .main .right .third_warpper .contact .contact-btn{
+    .main .right .right-warpper .contact .contact-btn{
         color: var(--color-dark-gray);
     }
     

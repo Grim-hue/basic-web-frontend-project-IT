@@ -4,6 +4,8 @@ const menuBtns = document.querySelectorAll(".menu-icon");
 const overlay = document.querySelector(".overlay");
 const toggleDarkMode = document.querySelector("#dark-mode-toggle");
 const body = document.querySelector("body");
+var user = JSON.parse(localStorage.getItem("user"));
+
 
 menuBtns.forEach((menuBtn) => {
     menuBtn.addEventListener("click", () => {
@@ -15,36 +17,126 @@ overlay.addEventListener("click", () => {
     navBar.classList.remove("open");
 });
 
-function setDarkMode(){
-    document.querySelector("#moon-sun").classList.remove("bxs-moon") 
-    document.querySelector("#moon-sun").classList.add("bxs-sun") 
+function setDarkMode() {
+    document.querySelector("#moon-sun").classList.remove("bxs-moon")
+    document.querySelector("#moon-sun").classList.add("bxs-sun")
 
 }
-function removetDarkMode(){
-    document.querySelector("#moon-sun").classList.remove("bxs-sun") 
-    document.querySelector("#moon-sun").classList.add("bxs-moon") 
-    
+function removetDarkMode() {
+    document.querySelector("#moon-sun").classList.remove("bxs-sun")
+    document.querySelector("#moon-sun").classList.add("bxs-moon")
+
 }
 if (localStorage.hasOwnProperty('isDarkMode')) {
     if (localStorage.getItem('isDarkMode') === 'true') {
         body.classList.toggle("dark-mode");
         setDarkMode()
     }
- }else{
+} else {
     localStorage.setItem('isDarkMode', false);
- }
+}
 
 
 toggleDarkMode.addEventListener("click", () => {
     //chages between moon and sun icon
     body.classList.toggle("dark-mode");
-    if(document.querySelector(".dark-mode")!=null){
+    if (document.querySelector(".dark-mode") != null) {
         localStorage.setItem('isDarkMode', 'true');
-        setDarkMode() 
-    }else {
+        setDarkMode()
+    } else {
         localStorage.setItem('isDarkMode', 'false');
         removetDarkMode()
     }
-
-
 });
+
+function logout() {
+    // Remove the user item from localStorage and redirect
+    localStorage.removeItem("user");
+    window.location.href = "login.html";
+}
+
+if (!user) {
+    // If no user is found, redirect to the login page
+    window.location.href = "login.html";
+}
+
+var otherUser;
+
+if (user.id === 2) {
+    // Set user to Andre
+    otherUser = {
+        id: 1,
+        name: "Andre",
+        email: "andre@gmail.com",
+        pic: "../images/profile_13.png",
+    };
+
+
+} else if (user.id === 1) {
+    // Set user to Carlos
+    otherUser = {
+        id: 2,
+        name: "Carlos",
+        email: "carlos@gmail.com",
+        pic: "../images/profile_12.png",
+    };
+}
+
+/* Duplicate chat for presentation
+the code is changed and repeated so that chat-duplicated.html can be logged with the other user at the same time */
+
+if(typeof reverse != 'undefined'){
+    if (user.id === 2) {
+        // Set user to Andre
+        user = {
+            id: 1,
+            name: "Andre",
+            email: "andre@gmail.com",
+            pic: "../images/profile_13.png",
+        };
+        otherUser = {
+            id: 2,
+            name: "Carlos",
+            email: "carlos@gmail.com",
+            pic: "../images/profile_12.png",
+        };
+    
+    } else if (user.id === 1) {
+        // Set user to Carlos
+        user = {
+            id: 2,
+            name: "Carlos",
+            email: "carlos@gmail.com",
+            pic: "../images/profile_12.png",
+        };
+        otherUser = {
+            id: 1,
+            name: "Andre",
+            email: "andre@gmail.com",
+            pic: "../images/profile_13.png",
+        };
+    
+    }
+}
+
+
+//load pic and names 
+
+const profilePics = document.querySelectorAll('#myPFP');
+profilePics.forEach((img) => {
+    img.src = user.pic;
+});
+
+const otherProfilePics = document.querySelectorAll('#otherUserPFP');
+otherProfilePics.forEach((img) => {
+    img.src = otherUser.pic;
+});
+
+const otherProfileNames = document.querySelectorAll('#otherUserName');
+otherProfileNames.forEach((name) => {
+    name.innerHTML = otherUser.name;
+});
+
+
+
+

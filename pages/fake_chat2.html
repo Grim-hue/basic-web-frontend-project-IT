@@ -35,7 +35,7 @@
                     <li class="list">
                         <a href="index.html" class="nav-link">
                             <i class="bx bx-home-alt icon"></i>
-                            <span class="link">Home</span>
+                            <span class="link">Dashboard</span>
                         </a>
                     </li>
                     <li class="list">
@@ -58,14 +58,14 @@
                     </li>
                 </ul>
 
-                <div class="bottom-content">
+                <ul class="lists">
                     <li class="list">
-                        <a href="#" class="nav-link">
-                            <i class="bx bx-cog icon"></i>
-                            <span class="link">Settings</span>
+                        <a href="#" onclick="logout()" class="nav-link">
+                            <i class="bx bx-log-out icon"></i>
+                            <span class="link">Logout</span>
                         </a>
                     </li>
-                </div>
+                </ul>
             </div>
         </div>
     </nav>
@@ -75,23 +75,25 @@
     <!------------main--------------->
 
     <div class="main">
-
-        <!------------------left------------------->
-
-        <div class="left">
-
-        </div>
-
-        <!------------center---------------------->
-
+        <!------------chat-box---------------------->
         <div class="chat-box">
             <div class="chat-wrapper">
                 <div class="massages">
                     <div class="contact">
-                        <a href="fake_chat1.html" style="text-decoration: none;">
-                            <button class="contact-btn">
+                        <a href="chat.html" style="text-decoration: none;">
+                            <button class="contact-btn" aria-label="Chat with Other User">
                                 <div class="flex-center">
-                                    <img src="../images/profile_1.png" />
+                                    <img src="../images/profile_6.png" id="otherUserPFP" alt="Other User Picture"/>
+                                    <p id="otherUserName"></p>
+                                </div>
+                            </button>
+                        </a>
+                    </div>
+                    <div class="contact">
+                        <a href="fake_chat1.html" style="text-decoration: none;">
+                            <button class="contact-btn" aria-label="Chat with Ethan Williams">
+                                <div class="flex-center">
+                                    <img src="../images/profile_1.png" alt="Ethan Williams Picture"/>
                                     <p>Ethan Williams</p>
                                 </div>
                             </button>
@@ -100,9 +102,9 @@
                     
                     <div class="contact selected">
                         <a href="fake_chat2.html" style="text-decoration: none;">
-                            <button class="contact-btn">
+                            <button class="contact-btn" aria-label="Chat with Olivia Smith">
                                 <div class="flex-center">
-                                    <img src="../images/profile_2.png" />
+                                    <img src="../images/profile_2.png" alt="Olivia Smith Picture"/>
                                     <p>Olivia Smith</p>
                                 </div>
                             </button>
@@ -111,9 +113,9 @@
                     
                     <div class="contact">
                         <a href="fake_chat3.html" style="text-decoration: none;">
-                            <button class="contact-btn">
+                            <button class="contact-btn" aria-label="Chat with Lucas Johnson">
                                 <div class="flex-center">
-                                    <img src="../images/profile_3.png" />
+                                    <img src="../images/profile_3.png" alt="Lucas Johnson Picture"/>
                                     <p>Lucas Johnson</p>
                                 </div>
                             </button>
@@ -122,9 +124,9 @@
                     
                     <div class="contact">
                         <a href="fake_chat4.html" style="text-decoration: none;">
-                            <button class="contact-btn">
+                            <button class="contact-btn" aria-label="Chat with Ava Brown">
                                 <div class="flex-center">
-                                    <img src="../images/profile_4.png" />
+                                    <img src="../images/profile_4.png" alt="Ava Brown Picture"/>
                                     <p>Ava Brown</p>
                                 </div>
                             </button>
@@ -133,9 +135,9 @@
                     
                     <div class="contact">
                         <a href="fake_chat5.html" style="text-decoration: none;">
-                            <button class="contact-btn">
+                            <button class="contact-btn" aria-label="Chat with Mason Davis">
                                 <div class="flex-center">
-                                    <img src="../images/profile_5.png" />
+                                    <img src="../images/profile_5.png" alt="Mason Davis Picture"/>
                                     <p>Mason Davis</p>
                                 </div>
                             </button>
@@ -144,9 +146,9 @@
                     
                     <div class="contact">
                         <a href="fake_chat6.html" style="text-decoration: none;">
-                            <button class="contact-btn">
+                            <button class="contact-btn" aria-label="Chat with Isabella Miller">
                                 <div class="flex-center">
-                                    <img src="../images/profile_6.png" />
+                                    <img src="../images/profile_6.png" alt="Isabella Miller Picture"/>
                                     <p>Isabella Miller</p>
                                 </div>
                             </button>
@@ -155,15 +157,15 @@
                     
                     <div class="contact">
                         <a href="fake_chat7.html" style="text-decoration: none;">
-                            <button class="contact-btn">
+                            <button class="contact-btn" aria-label="Chat with James Anderson">
                                 <div class="flex-center">
-                                    <img src="../images/profile_7.png" />
+                                    <img src="../images/profile_7.png" alt="James Anderson Picture"/>
                                     <p>James Anderson</p>
                                 </div>
                             </button>
                         </a>
                     </div>
-                </div>
+                </div>                 
                 <hr class="vertical">
                 <div class="main-chat">
                     <div class="text">
