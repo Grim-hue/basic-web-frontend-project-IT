@@ -37,7 +37,7 @@
 body {
     min-height: 100%;
     background: var(--color-light-secondary);
-    
+
 }
 
 /* Sidebar */
@@ -52,7 +52,7 @@ nav {
     background: var(--color-light-bg);
     box-shadow: 0 0 8px var(--color-light-shadow);
     justify-content: space-between;
-    
+
     z-index: 2;
 }
 
@@ -131,7 +131,7 @@ nav.open .sidebar {
 
 .lists .nav-link:hover {
     background-color: var(--color-light-primary);
-    
+
 }
 
 .nav-link .icon {
@@ -178,15 +178,21 @@ nav.open~.overlay {
         transform: scale3d(1, 1, 1)
     }
 
-    10%,20% {
+    10%,
+    20% {
         transform: scale3d(.95, .95, .95) rotate3d(0, 0, 1, -10deg)
     }
 
-    30%,50%,70%,90% {
+    30%,
+    50%,
+    70%,
+    90% {
         transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, 10deg)
     }
 
-    40%,60%,80% {
+    40%,
+    60%,
+    80% {
         transform: rotate3d(0, 0, 1, -10deg)
     }
 
@@ -195,21 +201,150 @@ nav.open~.overlay {
     }
 }
 
+/*-----------------left------------------*/
+
+.main .left {
+    width: 24%;
+    height: 89vh;
+    overflow: hidden;
+    overflow-y: hidden;
+    position: fixed;
+    left: 15px;
+    background: var(--color-light-bg);
+    border-radius: 7px;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
+    margin: 30px 0;
+    margin-right: 16px;
+    padding-right: 0 !important;
+}
+
+.main .left::-webkit-scrollbar {
+    width: 7px;
+}
+
+.main .left::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background: var(--color-light-tirdh);
+
+}
+
+.main .left:hover::-webkit-scrollbar-thumb {
+    background: #cccccc;
+}
+
+.left .info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+    justify-content: space-around;
+
+
+}
+
+.left-wrapper {
+    border-bottom: 0.5px solid #00000014;
+    padding-bottom: 12px;
+}
+
+.main-pfp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-pfp img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-position: center;
+    object-fit: cover;
+    margin: 10px 10px 20px 10px;
+    border: 4px solid #acacac6b;
+}
+
+
+.main-pfp p {
+    font-size: 15px;
+}
+
+.extra-detail {
+    display: flex;
+    align-items: center;
+    color: #00000069;
+    margin-left: 3vh;
+
+}
+
+.mini-post {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.mini-post div {
+    width: 203px;
+    height: 196px;
+    transition: 2s;
+    margin: 1px;
+}
+
+.mini-post div:hover {
+    width: 220px;
+    height: 220px;
+    transition: 2s;
+    margin: 5px;
+}
+
+.left-post-wrapper:hover .mini-post div:not(:hover) {
+    width: 140px;
+    height: 140px;
+    transition: 2s;
+}
+
+.mini-post img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.post,
+.followers,
+.following {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.following {
+    margin-right: 25px;
+}
+
+.extra-detail .date,
+.gender {
+    padding: 5px;
+}
+
+.left-post-wrapper {
+    margin-top: 23px;
+}
 
 /*-----------------main---------------*/
 .main {
     display: flex;
     margin-top: 60px;
-    background:var(--color-light-tirdh);
-    
+    background: var(--color-light-tirdh);
+
 }
 
 .main .center {
     width: 50%;
     height: auto;
     padding: 20px 20px 0 20px;
-    background:var(--color-light-tirdh);
-    
+    background: var(--color-light-tirdh);
+
     margin-left: 25%;
 }
 
@@ -222,12 +357,13 @@ nav.open~.overlay {
     width: 100%;
     height: auto;
     background: var(--color-light-bg);
-    
+
     padding: 10px 15px;
     border-radius: 7px;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
     margin: 10px 0;
-    
+    min-width: 439px;
+
 }
 
 .main .center .my-post img {
@@ -252,7 +388,7 @@ nav.open~.overlay {
     background: #efefef;
     border-radius: 30px;
     font-size: 17px;
-    
+
 }
 
 .main .center .my-post .search-top input:hover {
@@ -264,7 +400,7 @@ nav.open~.overlay {
     width: 100%;
     height: 1px;
     background: #cccccc;
-    
+
     border: 0;
     margin: 10px 0;
 }
@@ -297,7 +433,7 @@ nav.open~.overlay {
     width: 100%;
     height: auto;
     background: var(--color-light-bg);
-    
+    min-width: 439px;
     padding: 10px 15px;
     border-radius: 7px;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
@@ -335,8 +471,8 @@ nav.open~.overlay {
 }
 
 .main .center .friend-post img {
-    width: auto;
-    height: auto;
+    width: 100%;
+    height: 100%;
     border-radius: 0px;
     object-fit: cover;
     object-position: center;
@@ -380,7 +516,7 @@ nav.open~.overlay {
     width: 100%;
     height: 1px;
     background: #cccccc;
-    
+
     border: 0;
     margin: 10px 0;
 }
@@ -421,7 +557,8 @@ nav.open~.overlay {
     height: 10px;
     border-radius: 50%;
     background: #27cc37;
-    border: 2px solid var(--color-light-bg);;
+    border: 2px solid var(--color-light-bg);
+    ;
     position: relative;
     top: 15px;
     right: 25px;
@@ -431,7 +568,7 @@ nav.open~.overlay {
     width: 95%;
     padding: 5px 15px;
     background: #efefef;
-    
+
     border-radius: 30px;
 }
 
@@ -461,12 +598,13 @@ nav.open~.overlay {
     position: fixed;
     right: 0;
     background: var(--color-light-bg);
-    
+
     padding: 10px 5px 10px 15px;
     border-radius: 7px;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
     margin: 30px 0;
     margin-right: 16px;
+    min-width: 180px;
 }
 
 .main .right::-webkit-scrollbar {
@@ -475,8 +613,8 @@ nav.open~.overlay {
 
 .main .right::-webkit-scrollbar-thumb {
     border-radius: 20px;
-    background:var(--color-light-tirdh);
-    
+    background: var(--color-light-tirdh);
+
 }
 
 .main .right:hover::-webkit-scrollbar-thumb {
@@ -528,6 +666,7 @@ nav.open~.overlay {
     margin-right: 10px;
     font-size: 21px;
 }
+
 /* Dark mode */
 
 body.dark-mode {
@@ -536,9 +675,11 @@ body.dark-mode {
     nav {
         background-color: var(--color-dark-secondary);
     }
-    hr{
+
+    hr {
         background: var(--color-dark-overlay) !important;
     }
+
     nav .logo .menu-icon,
     .logo .logo-name {
         color: var(--color-dark-gray);
@@ -560,26 +701,31 @@ body.dark-mode {
     .overlay {
         background: var(--color-dark-overlay);
     }
-    .main, .center{
+
+    .main,
+    .center {
         background-color: var(--color-dark-bg);
     }
+
     .main .center .my-post {
         background: var(--color-dark-secondary);
         color: var(--color-dark-gray);
     }
+
     .main .center .friend-post {
         background: var(--color-dark-secondary);
         color: var(--color-dark-gray);
     }
+
     .main .center .my-post .search-top input {
         background: var(--color-comment-background);
     }
-    
+
     .main .center .my-post .search-top input:hover {
         background: var(--color-comment-background-hover);
     }
-    
-    
+
+
     .main .center .my-post .post-bottom .post-icon:hover {
         background: var(--color-dark-primary);
     }
@@ -587,31 +733,121 @@ body.dark-mode {
     .main .center .friend-post .comment-wrapper .comment-search {
         background: var(--color-comment-background);
     }
+
     .main .center .friend-post .comment-wrapper .comment-search i {
         padding: 0 5px;
         background: var(--color-dark-overlay) !important;
     }
 
+    .main .left {
+        background: var(--color-dark-secondary);
+        color: var(--color-dark-gray);
+    }
+    .left-wrapper{
+        border-bottom: 0.5px solid var(--color-comment-background-hover);
+    }
     .main .right {
         background: var(--color-dark-secondary);
         color: var(--color-dark-gray);
     }
+    .extra-detail {
+        color: var(--color-dark-gray);
+    }
 
     .main .right::-webkit-scrollbar-thumb {
-        background:var(--color-dark-gray);;
-    }
-    
-    .main .right:hover::-webkit-scrollbar-thumb {
-        background:var(--color-dark-gray);;
+        background: var(--color-dark-gray);
     }
 
-    
+    .main .right:hover::-webkit-scrollbar-thumb {
+        background: var(--color-dark-gray);
+    }
+
+
     .main .right .right-warpper .contact:hover {
         background-color: var(--color-comment-background-hover);
     }
-    .main .right .right-warpper .contact .contact-btn{
+
+    .main .right .right-warpper .contact .contact-btn {
         color: var(--color-dark-gray);
     }
-    
 
+
+}
+
+/* styles for screens smaller than 1500px */
+@media screen and (max-width: 1500px) {
+    .mini-post div {
+        width: 138px;
+        height: 144px;
+        transition: 2s;
+        margin: 1px;
+    }
+
+    .post,
+    .followers,
+    .following {
+        display: none;
+    }
+
+    .extra-detail {
+        display: flex;
+        align-items: center;
+        color: #00000069;
+        justify-content: center;
+        margin: 0px;
+    }
+}
+
+/* styles for screens smaller than 1000px */
+@media screen and (max-width: 1000px) {
+    .main {
+        display: flex;
+        margin-top: 60px;
+        background: var(--color-light-tirdh);
+        flex-direction: column;
+        align-items: center;
+        min-width: 450px;
+    }
+    .main .left {
+        width: 94%;
+        height: 89vh;
+        overflow: hidden;
+        overflow-y: hidden;
+   
+        position: static;
+        background: var(--color-light-bg);
+        border-radius: 7px;
+        box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
+        margin: 30px 30px 10px 30px;
+        margin-right: 16px;
+        padding-right: 0 !important;
+    }
+    .main .center {
+        width: 96%;
+        height: auto;
+        padding: 0px;
+        background: var(--color-light-tirdh);
+        /* margin-left: 25%; */
+        margin: 0px 30px 0px 30px;
+    }
+    .main .right {
+        width: 96%;
+        height: 89vh;
+        overflow: hidden;
+        overflow-y: scroll;
+        position: static;
+        right: 0;
+        background: var(--color-light-bg);
+        padding: 10px 5px 10px 15px;
+        border-radius: 7px;
+        box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
+        margin: 0px 30px 0px 30px;
+        min-width: 180px;
+    }
+    .mini-post div {
+        width: 84vh;
+        height: 24vh;
+        transition: 2s;
+        margin: 1px;
+    }
 }
