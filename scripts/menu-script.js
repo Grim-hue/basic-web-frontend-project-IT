@@ -60,6 +60,29 @@ if (!user) {
     window.location.href = "login.html";
 }
 
+
+function getLastmessage() {
+    let messages = JSON.parse(localStorage.getItem("newMessages")) || [];
+
+    const notification = document.querySelector(".notification");
+    const lastMessageDiv = document.querySelector(".last-message");
+    if(notification!=null && lastMessageDiv!=null){
+        if (messages.length==0) {
+            notification.classList.remove("notification");
+        } else {
+            // get last item
+            const lastMessage = messages.slice(-1).pop();
+    
+            if (lastMessage.onwerId != user.id) {
+                notification.innerHTML = messages.length;
+                lastMessageDiv.innerHTML = lastMessage.message + "...";
+            } else {
+                notification.classList.remove("notification");
+            }
+        }
+    }
+}
+
 var otherUser;
 
 if (user.id === 2) {
@@ -85,7 +108,7 @@ if (user.id === 2) {
 /* Duplicate chat for presentation
 the code is changed and repeated so that chat-duplicated.html can be logged with the other user at the same time */
 
-if(typeof reverse != 'undefined'){
+if (typeof reverse != 'undefined') {
     if (user.id === 2) {
         // Set user to Andre
         user = {
@@ -100,7 +123,7 @@ if(typeof reverse != 'undefined'){
             email: "carlos@gmail.com",
             pic: "../images/profile_12.png",
         };
-    
+
     } else if (user.id === 1) {
         // Set user to Carlos
         user = {
@@ -115,11 +138,11 @@ if(typeof reverse != 'undefined'){
             email: "andre@gmail.com",
             pic: "../images/profile_13.png",
         };
-    
+
     }
 }
 
-
+getLastmessage();
 //load pic and names 
 
 const profilePics = document.querySelectorAll('#myPFP');

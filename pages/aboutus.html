@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/aboutus.css" />
+    <!-- Boxicons -->
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
+    <!-- Import so send email functional -->
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+</head>
+
+<body>
+    <!--Alert div-->
+    <div id="alert"><span class="closebtn">&times;</span>
+        <div></div>
+    </div>
+    <!-- Container for sidebar/menu -->
+    <nav id="sidebar-container">
+        <div class="logo">
+            <i class="bx bx-menu menu-icon"></i>
+            <span class="logo-name">Echo Link</span>
+        </div>
+        <div>
+            <button id="dark-mode-toggle" class="bx toggle-button"><i id="moon-sun" class="bx bxs-moon"></i></button>
+        </div>
+        <!-- In the menu -->
+        <div class="sidebar">
+            <div class="logo">
+                <i class="bx bx-menu menu-icon"></i>
+                <span class="logo-name">Echo Link</span>
+            </div>
+
+            <div class="sidebar-content">
+                <ul class="lists">
+                    <li class="list">
+                        <a href="index.html" class="nav-link">
+                            <i class="bx bx-home-alt icon"></i>
+                            <span class="link">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="chat.html" class="nav-link">
+                            <i class="bx bx-message-rounded icon"></i>
+                            <span class="link">Messages</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="aboutus.html" class="nav-link">
+                            <i class="bx bx-info-circle icon"></i>
+                            <span class="link">About us</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="lists">
+                    <li class="list">
+                        <a href="#" onclick="logout()" class="nav-link">
+                            <i class="bx bx-log-out icon"></i>
+                            <span class="link">Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Menu Overlay -->
+    <section class="overlay"></section>
+
+    <!------------main--------------->
+
+    <div class="main">
+        <!------------center---------------------->
+
+        <div class="about-us-box ">
+            <article class="about-us-wrapper">
+
+                <div class="text-block-center">
+                    <div class="img">
+                        <img src="../images/about_us_1.png">
+                    </div>
+
+                    <div class="text-wrapper" style="margin-left: 50px;width: 45%;">
+                        <header>
+                            <h2>About Us</h2>
+                        </header>
+                        <p>
+                            Welcome to <strong>Echo Link</strong>, a platform designed to amplify your voice and connect
+                            you with a vibrant community. Whether you’re here to chat, share posts, or explore the
+                            thoughts and ideas of others, Echo Link is your digital space to express and engage.
+                        </p>
+                        <h3>Built by Two Dreamers</h3>
+                        <p>
+                            Echo Link was created by two passionate individuals, André and Carlos, with a shared vision:
+                            to create a simple, user-friendly platform where people can share their thoughts, start
+                            conversations, and stay connected.
+                            What started as a small idea between friends has grown into a space where anyone can feel
+                            heard and find their echo in the world.
+                        </p>
+                        <p class="small-info">
+                            <i class="bx bxs-info-circle"></i> Echo Link is a project developed as part of the ISTEC
+                            discipline.
+
+                        </p>
+                    </div>
+                </div>
+
+            </article>
+            <article class="about-us-wrapper">
+
+                <div class="text-block-center">
+                    <div class="text-wrapper" style="margin-left: 50px;width: 45%;">
+                        <header>
+                            <h2>Why Echo Link?</h3>
+                        </header>
+                        <p>
+                            We believe everyone deserves a voice. That’s why we’ve combined the power of chat and
+                            posting into one seamless experience. With features that are easy to use and a community
+                            that’s ready to engage, Echo Link is here to make sharing your story effortless and
+                            meaningful.
+                        </p>
+                        <h3>Future Plans</h3>
+                        <p>
+                            Echo Link is just the beginning. We aim to continuously improve and expand the platform
+                            to
+                            provide even more engaging ways to connect. In the future, we plan to implement exciting
+                            new
+                            features like <strong>stories</strong>, allowing users to share short, time-sensitive
+                            updates and moments. Stay tuned as Echo Link evolves to better meet the needs of our
+                            growing
+                            community!
+                        </p>
+                    </div>
+                    <div class="img">
+                        <img src="../images/about_us_2.png">
+                    </div>
+                </div>
+            </article>
+            <article class="about-us-wrapper">
+                <div class="text-block-center">
+                    <div class="img">
+                        <img src="../images/about_us_3.png">
+                    </div>
+                    <div class="text-wrapper" style="margin-left: 50px; width: 42%;">
+                        <header>
+                            <h2>Contact us</h3>
+                        </header>
+                        <div class="formcarry-container">
+                            <form action="#" method="POST" class="formcarry-form">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="fullName" placeholder="Enter your name" required />
+
+                                <label for="email">Your Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="Enter your email" required />
+
+                                <label for="message">Your Message</label>
+                                <textarea name="message" id="message" cols="30" rows="10"
+                                    placeholder="Enter your message"></textarea>
+
+                                <button type="submit">Send</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </article>
+        </div>
+
+    </div>
+
+    <script src="../scripts/menu-script.js"></script>
+    <script src="../scripts/utils.js"></script>
+    <script src="../scripts/email-send.js"></script>
+</body>
+
+</html>

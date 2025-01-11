@@ -38,21 +38,15 @@
                         </a>
                     </li>
                     <li class="list">
-                        <a href="#" class="nav-link">
-                            <i class="bx bx-bell icon"></i>
-                            <span class="link">Notifications</span>
-                        </a>
-                    </li>
-                    <li class="list">
                         <a href="chat.html" class="nav-link">
                             <i class="bx bx-message-rounded icon"></i>
                             <span class="link">Messages</span>
                         </a>
                     </li>
                     <li class="list">
-                        <a href="#" class="nav-link">
-                            <i class="bx bx-heart icon"></i>
-                            <span class="link">Likes</span>
+                        <a href="aboutus.html" class="nav-link">
+                            <i class="bx bx-info-circle icon"></i>
+                            <span class="link">About us</span>
                         </a>
                     </li>
                 </ul>
@@ -86,7 +80,7 @@
                         <img src="../images/profile.png" id="myPFP" class="pfp" alt="Profile Picture">
                         <p>André Freitas</p>
                     </div>
-                    
+
                     <div class="post">
                         <div><b>0</b></div>
                         <div>Post</div>
@@ -101,7 +95,7 @@
                     </div>
                 </div>
                 <div>
-                    
+
                 </div>
 
                 <div class="extra-detail">
@@ -109,7 +103,7 @@
                     <p class="gender"><i class="bx bx-male-sign"></i> Male</p>
                 </div>
 
-                
+
             </section>
             <section class="left-post-wrapper">
                 <div class="mini-post">
@@ -162,13 +156,15 @@
             <!-- Post 1 -->
             <section class="friend-post">
                 <div class="friend-post-top">
-                    <div class="img-name">
+                    <article class="img-name">
                         <img src="../images/profile_1.png" alt="Ethan Williams' profile picture">
                         <div class="friends-title">
-                            <p class="friends-name">Ethan Williams</p>
-                            <span>Enjoying a sunny day at the beach. Life is good!</span>
+                            <header>
+                                <p class="friends-name">Ethan Williams</p>
+                            </header>
+                            <article><span>Enjoying a sunny day at the beach. Life is good!</span></article>
                         </div>
-                    </div>
+                    </article>
                     <div class="menu" aria-label="More options for this post">
                         <i class="bx bx-dots-vertical-rounded"></i>
                     </div>
@@ -219,8 +215,11 @@
                     <div class="img-name">
                         <img src="../images/profile_2.png" alt="Olivia Smith's profile picture">
                         <div class="friends-title">
-                            <p class="friends-name">Olivia Smith</p>
-                            <span>Had an amazing time hiking this weekend. Nature is beautiful!</span>
+                            <header>
+                                <p class="friends-name">Olivia Smith</p>
+                            </header>
+                            <article><span>Had an amazing time hiking this weekend. Nature is beautiful!</span>
+                            </article>
                         </div>
                     </div>
                     <div class="menu" aria-label="More options for this post">
@@ -272,8 +271,10 @@
                     <div class="img-name">
                         <img src="../images/profile_3.png" alt="Lucas Johnson's profile picture">
                         <div class="friends-title">
-                            <p class="friends-name">Lucas Johnson</p>
-                            <span>Can’t believe I finally completed this project. Super proud!</span>
+                            <header>
+                                <p class="friends-name">Lucas Johnson</p>
+                            </header>
+                            <article><span>Can’t believe I finally completed this project. Super proud!</span></article>
                         </div>
                     </div>
                     <div class="menu" aria-label="More options for this post">
@@ -325,8 +326,11 @@
                     <div class="img-name">
                         <img src="../images/profile_4.png" alt="Ava Brown's profile picture">
                         <div class="friends-title">
-                            <p class="friends-name">Ava Brown</p>
-                            <span>Just finished reading an incredible book. Highly recommend it!</span>
+                            <header>
+                                <p class="friends-name">Ava Brown</p>
+                            </header>
+                            <article><span>Just finished reading an incredible book. Highly recommend it!</span>
+                            </article>
                         </div>
                     </div>
                     <div class="menu" aria-label="More options for this post">
@@ -388,8 +392,10 @@
                     <div class="img-name">
                         <img src="../images/profile_5.png" alt="Mason Davis' profile picture">
                         <div class="friends-title">
-                            <p class="friends-name">Mason Davis</p>
-                            <span>Throwback to an unforgettable road trip last summer. 🚗</span>
+                            <header>
+                                <p class="friends-name">Mason Davis</p>
+                            </header>
+                            <article><span>Throwback to an unforgettable road trip last summer. 🚗</span></article>
                         </div>
                     </div>
                     <div class="menu" aria-label="More options for this post">
@@ -450,8 +456,10 @@
                     <div class="img-name">
                         <img src="../images/profile_6.png" alt="Isabella Miller's profile picture">
                         <div class="friends-title">
-                            <p class="friends-name">Isabella Miller</p>
-                            <span>Finally tried that new restaurant in town. 10/10 experience!</span>
+                            <header>
+                                <p class="friends-name">Isabella Miller</p>
+                            </header>
+                            <article><span>Finally tried that new restaurant in town. 10/10 experience!</span></article>
                         </div>
                     </div>
                     <div class="menu" aria-label="More options for this post">
@@ -515,18 +523,20 @@
 
                 <div class="contact-title">
 
-                    <h2>Contacts</h2>
+                    <header>
+                        <h2>Contacts</h2>
+                    </header>
 
-                    <div class="contact-icon">
+                    <article class="contact-icon">
 
                         <i class="bx bx-search"></i>
                         <i class="bx bx-dots-vertical-rounded"></i>
 
-                    </div>
+                    </article>
                 </div>
 
                 <!------------------Conactos------------------>
-                <div class="mensagens">
+                <section class="mensagens">
 
                     <div class="contact">
                         <a href="chat.html" style="text-decoration: none;" aria-label="Chat with Other User">
@@ -535,7 +545,9 @@
                                     <img id="otherUserPFP" src="../images/profile_1.png" alt="Picture of Other User">
                                     <p id="otherUserName"></p>
                                 </div>
-                                <i class="bx bxs-paper-plane" aria-hidden="true"></i>
+                                <div class="last-message"></div>
+                                <div class="notification"><i class="bx bxs-paper-plane" aria-hidden="true"></i></div>
+
                             </button>
                         </a>
                     </div>
@@ -623,7 +635,7 @@
                             </button>
                         </a>
                     </div>
-                </div>
+                </section>
         </div>
     </div>
     </div>

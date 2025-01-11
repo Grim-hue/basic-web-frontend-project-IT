@@ -32,6 +32,9 @@ function handleInputEnter(event) {
     }
 }
 
+
+
+
 // Function to load messages from localStorage and display those matching the current user's ID
 
 function loadMessagesForCurrentUser() {
@@ -54,11 +57,11 @@ function loadMessagesForCurrentUser() {
 
         if (messageObj.onwerId == currentUser.id) {
             newMessage.classList.add("right-box");
-            newMessage.innerHTML = `<div class='message-box-right'>${messageObj.message}</div>`;
+            newMessage.innerHTML = `<div class='message-box-right'><p>${messageObj.message}</p></div>`;
             textDiv.appendChild(newMessage);
         } else {
             newMessage.classList.add("right-left");
-            newMessage.innerHTML = `<div class='message-box-left'>${messageObj.message}</div>`;
+            newMessage.innerHTML = `<div class='message-box-left'><p>${messageObj.message}</p></div>`;
             textDiv.appendChild(newMessage);
         }
     });
@@ -70,7 +73,7 @@ function loadMessagesForCurrentUser() {
 
         if (messageObj.onwerId == currentUser.id && messageObj.right) {
             newMessage.classList.add("right-box");
-            newMessage.innerHTML = `<div class='message-box-right'>${messageObj.message}</div>`;
+            newMessage.innerHTML = `<div class='message-box-right'><p>${messageObj.message}</p></div>`;
             textDiv.appendChild(newMessage);
         }
     });
@@ -98,7 +101,7 @@ setInterval(function () {
 
         if (messageObj.onwerId == currentUser.id && !messageObj.right) {
             newMessage.classList.add("right-box");
-            newMessage.innerHTML = `<div class='message-box-right'>${messageObj.message}</div>`;
+            newMessage.innerHTML = `<div class='message-box-right'><p>${messageObj.message}</p></div>`;
             textDiv.appendChild(newMessage);
             //scroll down if send message
             textDiv.scrollTop = messagesElem.scrollHeight - messagesElem.clientHeight;
@@ -106,7 +109,7 @@ setInterval(function () {
 
         } else if (messageObj.onwerId == otherUser.id && !messageObj.left) {
             newMessage.classList.add("right-left");
-            newMessage.innerHTML = `<div class='message-box-left'>${messageObj.message}</div>`;
+            newMessage.innerHTML = `<div class='message-box-left'><p>${messageObj.message}</p></div>`;
             textDiv.appendChild(newMessage);
             messageObj.left = true;
         }
