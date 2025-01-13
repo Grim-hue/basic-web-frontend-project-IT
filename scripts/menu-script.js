@@ -55,24 +55,19 @@ function logout() {
     window.location.href = "login.html";
 }
 
-if (!user) {
-    // If no user is found, redirect to the login page
-    window.location.href = "login.html";
-}
-
 
 function getLastmessage() {
     let messages = JSON.parse(localStorage.getItem("newMessages")) || [];
 
     const notification = document.querySelector(".notification");
     const lastMessageDiv = document.querySelector(".last-message");
-    if(notification!=null && lastMessageDiv!=null){
-        if (messages.length==0) {
+    if (notification != null && lastMessageDiv != null) {
+        if (messages.length == 0) {
             notification.classList.remove("notification");
         } else {
             // get last item
             const lastMessage = messages.slice(-1).pop();
-    
+
             if (lastMessage.onwerId != user.id) {
                 notification.innerHTML = messages.length;
                 lastMessageDiv.innerHTML = lastMessage.message + "...";
@@ -83,83 +78,125 @@ function getLastmessage() {
     }
 }
 
-var otherUser;
+// Check if user data exists
+if (user) {
+    // Update the profile picture
+    const profilePic = document.getElementById("myPFP");
+    if (profilePic) {
+        profilePic.src = user.pic;
+    }
 
-if (user.id === 2) {
-    // Set user to Andre
-    otherUser = {
-        id: 1,
-        name: "Andre",
-        email: "andre@gmail.com",
-        pic: "../images/profile_13.png",
-    };
+    // Update the name
+    const nameElement = document.getElementById("name");
+    if (nameElement) {
+        nameElement.innerHTML = user.name;
+    }
 
+    // Update the number of posts
+    const postsElement = document.getElementById("post");
+    if (postsElement) {
+        postsElement.innerHTML = user.post;
+    }
 
-} else if (user.id === 1) {
-    // Set user to Carlos
-    otherUser = {
-        id: 2,
-        name: "Carlos",
-        email: "carlos@gmail.com",
-        pic: "../images/profile_12.png",
-    };
-}
+    // Update the number of followers
+    const followersElement = document.getElementById("followers");
+    if (followersElement) {
+        followersElement.innerHTML = user.followers;
+    }
 
-/* Duplicate chat for presentation
-the code is changed and repeated so that chat-duplicated.html can be logged with the other user at the same time */
+    // Update the number of following
+    const followingElement = document.getElementById("following");
+    if (followingElement) {
+        followingElement.innerHTML = user.following;
+    }
 
-if (typeof reverse != 'undefined') {
+    // Update the birth date
+    const dateElement = document.getElementById("date");
+    if (dateElement) {
+        dateElement.innerHTML = user.birth;
+    }
+
+    var otherUser;
+
     if (user.id === 2) {
         // Set user to Andre
-        user = {
+        otherUser = {
             id: 1,
             name: "Andre",
             email: "andre@gmail.com",
             pic: "../images/profile_13.png",
         };
-        otherUser = {
-            id: 2,
-            name: "Carlos",
-            email: "carlos@gmail.com",
-            pic: "../images/profile_12.png",
-        };
+
 
     } else if (user.id === 1) {
         // Set user to Carlos
-        user = {
+        otherUser = {
             id: 2,
             name: "Carlos",
             email: "carlos@gmail.com",
             pic: "../images/profile_12.png",
         };
-        otherUser = {
-            id: 1,
-            name: "Andre",
-            email: "andre@gmail.com",
-            pic: "../images/profile_13.png",
-        };
-
     }
+
+    /* Duplicate chat for presentation
+    the code is changed and repeated so that chat-duplicated.html can be logged with the other user at the same time */
+
+    if (typeof reverse != 'undefined') {
+        if (user.id === 2) {
+            // Set user to Andre
+            user = {
+                id: 1,
+                name: "Andre",
+                email: "andre@gmail.com",
+                pic: "../images/profile_13.png",
+            };
+            otherUser = {
+                id: 2,
+                name: "Carlos",
+                email: "carlos@gmail.com",
+                pic: "../images/profile_12.png",
+            };
+
+        } else if (user.id === 1) {
+            // Set user to Carlos
+            user = {
+                id: 2,
+                name: "Carlos",
+                email: "carlos@gmail.com",
+                pic: "../images/profile_12.png",
+            };
+            otherUser = {
+                id: 1,
+                name: "Andre",
+                email: "andre@gmail.com",
+                pic: "../images/profile_13.png",
+            };
+
+        }
+    }
+
+    //load pic and names 
+
+    const profilePics = document.querySelectorAll('#myPFP');
+    profilePics.forEach((img) => {
+        img.src = user.pic;
+    });
+
+    const otherProfilePics = document.querySelectorAll('#otherUserPFP');
+    otherProfilePics.forEach((img) => {
+        img.src = otherUser.pic;
+    });
+
+    const otherProfileNames = document.querySelectorAll('#otherUserName');
+    otherProfileNames.forEach((name) => {
+        name.innerHTML = otherUser.name;
+    });
+
+
+    getLastmessage();
+} else {
+    // If no user is found, redirect to the login page
+    window.location.href = "login.html";
 }
-
-getLastmessage();
-//load pic and names 
-
-const profilePics = document.querySelectorAll('#myPFP');
-profilePics.forEach((img) => {
-    img.src = user.pic;
-});
-
-const otherProfilePics = document.querySelectorAll('#otherUserPFP');
-otherProfilePics.forEach((img) => {
-    img.src = otherUser.pic;
-});
-
-const otherProfileNames = document.querySelectorAll('#otherUserName');
-otherProfileNames.forEach((name) => {
-    name.innerHTML = otherUser.name;
-});
-
-
 
 
