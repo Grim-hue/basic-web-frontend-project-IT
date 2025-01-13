@@ -15,11 +15,16 @@ function login() {
             "user",
             JSON.stringify({
                 id: 1,
-                name: "Andre",
+                name: "Andre Freitas",
                 email: "andre@gmail.com",
                 pic: "../images/profile_13.png",
+                birth: "28 - 04 - 2004",
+                post: 6,
+                followers: 64,
+                following: 128
             })
         );
+
         return true;
     } else if (email === "carlos@gmail.com" && password === "123") {
         // Set local storage for Carlos
@@ -27,11 +32,16 @@ function login() {
             "user",
             JSON.stringify({
                 id: 2,
-                name: "Carlos",
+                name: "Carlos Arvela",
                 email: "carlos@gmail.com",
                 pic: "../images/profile_12.png",
+                birth: "15 - 06 - 2004",
+                post: 12,
+                followers: 164,
+                following: 328
             })
         );
+
         return true;
     }
     alert.lastElementChild.innerHTML = "Invalid email or password. Please try again.";
