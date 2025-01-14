@@ -1,4 +1,12 @@
 
+/*Script for handling: 
+    - switch dark mode
+    - menu open and close
+    - adding last message on contacts
+    - loading name for logged user and others
+    - setting current user var and other user var 
+*/
+
 const navBar = document.querySelector("nav");
 const menuBtns = document.querySelectorAll(".menu-icon");
 const overlay = document.querySelector(".overlay");

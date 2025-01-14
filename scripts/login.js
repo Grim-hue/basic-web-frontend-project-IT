@@ -1,3 +1,6 @@
+
+//Handling login and redirect
+
 function login() {
     let alert = document.getElementById('alert');
     const email = document.getElementById('email').value

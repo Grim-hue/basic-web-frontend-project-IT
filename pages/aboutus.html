@@ -7,12 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web</title>
     <!-- CSS -->
-    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
     <link rel="stylesheet" href="../styles/aboutus.css" />
     <!-- Boxicons -->
     <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
-    <!-- Import so send email functional -->
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
 
 </head>
 
@@ -163,7 +162,7 @@
                                 <textarea name="message" id="message" cols="30" rows="10"
                                     placeholder="Enter your message"></textarea>
 
-                                <button type="submit">Send</button>
+                                <button id="submit" type="submit">Send</button>
                             </form>
                         </div>
 
@@ -173,10 +172,12 @@
         </div>
 
     </div>
-
-    <script src="../scripts/menu-script.js"></script>
+    <!-- Import so send email functional -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="../scripts/script.js"></script>
     <script src="../scripts/utils.js"></script>
     <script src="../scripts/email-send.js"></script>
+
 </body>
 
 </html>

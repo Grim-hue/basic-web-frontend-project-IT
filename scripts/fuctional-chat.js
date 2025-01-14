@@ -1,3 +1,7 @@
+
+//Handling chat, getting last messages and new messages script 
+
+
 // Retrieve the current user from localStorage
 let currentUser = user
 // For the duplicated chat

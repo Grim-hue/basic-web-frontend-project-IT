@@ -1,3 +1,16 @@
+/* Styles for index page and others (with dark mode too):
+    index: 
+        - left profile
+        - center post
+        - right contacts
+    chat + fakes chats + duplicated chat:
+        - using vars for colors
+    about us:
+        - using vars for colors
+*/
+
+
+
 /* Define color variables */
 :root {
     /* Light Mode Colors */
@@ -40,7 +53,7 @@ body {
 
 }
 
-/* Sidebar */
+/* ----------------- Sidebar ----------------- */
 nav {
     position: fixed;
     top: 0;
@@ -151,7 +164,9 @@ nav.open .sidebar {
     color: var(--color-light-bg);
 }
 
-/* overlay */
+/*----------------- End Sidebar -----------------*/
+
+/*----------------- overlay -----------------*/
 .overlay {
     position: fixed;
     top: 0;
@@ -171,7 +186,9 @@ nav.open~.overlay {
     pointer-events: auto;
 }
 
-/*Moon animation*/
+/*----------------- End Overlay -----------------*/
+
+/*----------------- Moon animation -----------------*/
 
 @keyframes Moontada {
     from {
@@ -201,7 +218,9 @@ nav.open~.overlay {
     }
 }
 
-/*-----------------left------------------*/
+/*----------------- End Moon animation -----------------*/
+
+/*-----------------Left------------------*/
 
 .main .left {
     width: 24%;
@@ -331,6 +350,9 @@ nav.open~.overlay {
     margin-top: 23px;
 }
 
+/*----------------- End Left------------------*/
+
+
 /*-----------------main---------------*/
 .main {
     display: flex;
@@ -353,7 +375,7 @@ nav.open~.overlay {
 }
 
 /*-----------------my-post---------------*/
-.main .center .my-post {
+.my-post {
     width: 100%;
     height: auto;
     background: var(--color-light-bg);
@@ -366,7 +388,7 @@ nav.open~.overlay {
 
 }
 
-.main .center .my-post img {
+.my-post img {
     width: 45px;
     height: 45px;
     border-radius: 50%;
@@ -374,12 +396,12 @@ nav.open~.overlay {
     object-position: center;
 }
 
-.main .center .my-post .search-top {
+.my-post .search-top {
     display: flex;
     align-items: center;
 }
 
-.main .center .my-post .search-top input {
+.my-post .search-top input {
     width: 90%;
     padding: 10px;
     margin-left: 20px;
@@ -391,12 +413,12 @@ nav.open~.overlay {
 
 }
 
-.main .center .my-post .search-top input:hover {
+.my-post .search-top input:hover {
     background: #e3e3e3;
     cursor: text;
 }
 
-.main .center .my-post hr {
+.my-post hr {
     width: 100%;
     height: 1px;
     background: #cccccc;
@@ -412,7 +434,7 @@ nav.open~.overlay {
     margin: 5px auto;
 }
 
- .post-bottom .post-icon {
+.post-bottom .post-icon {
     display: flex;
     align-items: center;
     margin: 0 auto;
@@ -420,15 +442,16 @@ nav.open~.overlay {
     cursor: pointer;
 }
 
- .post-bottom .post-icon:hover {
+.post-bottom .post-icon:hover {
     background: #efefef;
     border-radius: 8px;
 }
 
+/*-----------------End My-post---------------*/
 
 /*-----------------friend-post---------------*/
 
-.main .center .friend-post {
+.friend-post {
     margin: 10px 0;
     width: 100%;
     height: auto;
@@ -439,19 +462,19 @@ nav.open~.overlay {
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
 }
 
-.main .center .friend-post .friend-post-top {
+.friend-post .friend-post-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 15px;
 }
 
-.main .center .friend-post .friend-post-top .img-name {
+.friend-post .friend-post-top .img-name {
     display: flex;
     align-items: center;
 }
 
-.main .center .friend-post .friend-post-top .img-name img {
+.friend-post .friend-post-top .img-name img {
     width: 45px;
     height: 45px;
     border-radius: 50%;
@@ -461,16 +484,16 @@ nav.open~.overlay {
     cursor: pointer;
 }
 
-.main .center .friend-post .friend-post-top .img-name .friends-title .friends-name {
+.friend-post .friend-post-top .img-name .friends-title .friends-name {
     font-weight: bold;
     cursor: pointer;
 }
 
-.main .center .friend-post .friend-post-top .img-name .friends-title .friends-name:hover {
+.friend-post .friend-post-top .img-name .friends-title .friends-name:hover {
     text-decoration: underline;
 }
 
-.main .center .friend-post img {
+.friend-post img {
     width: 100%;
     height: 100%;
     border-radius: 0px;
@@ -479,40 +502,40 @@ nav.open~.overlay {
     border-radius: 5px;
 }
 
-.main .center .friend-post .info {
+.friend-post .info {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin: 10px 0;
 }
 
-.main .center .friend-post .info .emoji-img {
+.friend-post .info .emoji-img {
     display: flex;
 }
 
-.main .center .friend-post .info .emoji-img img {
+.friend-post .info .emoji-img img {
     width: 20px;
     height: 20px;
 }
 
-.main .center .friend-post .info .emoji-img p {
+.friend-post .info .emoji-img p {
     margin-left: 5px;
     font-size: 16px;
     color: #919191;
 }
 
-.main .center .friend-post .info .comment {
+.friend-post .info .comment {
     display: flex;
     align-items: center;
 }
 
-.main .center .friend-post .info .comment p {
+.friend-post .info .comment p {
     padding: 0 12px;
     font-size: 15px;
     color: #919191;
 }
 
-.main .center .friend-post hr {
+.friend-post hr {
     width: 100%;
     height: 1px;
     background: #cccccc;
@@ -521,29 +544,16 @@ nav.open~.overlay {
     margin: 10px 0;
 }
 
-.main .center .friend-post .like {
-    width: 90%;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
 
-.main .center .friend-post .like .like-icon {
+/*----------------- friend-post comments---------------*/
+
+
+.friend-post .comment-wrapper {
     display: flex;
     align-items: center;
 }
 
-
-/*-----------------friend-post---------------*/
-
-
-.main .center .friend-post .comment-wrapper {
-    display: flex;
-    align-items: center;
-}
-
-.main .center .friend-post .comment-wrapper img {
+.friend-post .comment-wrapper img {
     width: 35px;
     height: 35px;
     border-radius: 50%;
@@ -552,7 +562,7 @@ nav.open~.overlay {
     margin-right: 15px;
 }
 
-.main .center .friend-post .comment-wrapper .circle {
+.friend-post .comment-wrapper .circle {
     width: 10px;
     height: 10px;
     border-radius: 50%;
@@ -564,7 +574,7 @@ nav.open~.overlay {
     right: 25px;
 }
 
-.main .center .friend-post .comment-wrapper .comment-search {
+.friend-post .comment-wrapper .comment-search {
     width: 95%;
     padding: 5px 15px;
     background: #efefef;
@@ -572,7 +582,7 @@ nav.open~.overlay {
     border-radius: 30px;
 }
 
-.main .center .friend-post .comment-wrapper .comment-search input {
+.friend-post .comment-wrapper .comment-search input {
     width: 85%;
     height: 30px;
     background: none;
@@ -580,12 +590,12 @@ nav.open~.overlay {
     outline: none;
 }
 
-.main .center .friend-post .comment-wrapper .comment-search i {
+.friend-post .comment-wrapper .comment-search i {
     padding: 0 5px;
     color: #919191;
 }
 
-
+/*----------------- end friend-post && commets---------------*/
 
 /*-----------------right------------------*/
 
@@ -667,6 +677,9 @@ nav.open~.overlay {
     font-size: 21px;
 }
 
+/*-----------------end right------------------*/
+
+/*-----------------notification && last message------------------*/
 .notification {
     border-radius: 50%;
     background: red;
@@ -687,8 +700,10 @@ nav.open~.overlay {
     overflow-y: auto;
     margin: 0px 20px 0px 25px;
 }
+/*-----------------end notification && last message------------------*/
 
-/* Alert */
+
+/*-----------------Alert-----------------*/
 
 #alert {
     position: fixed;
@@ -744,7 +759,9 @@ nav.open~.overlay {
     color: black;
 }
 
+/*-----------------end alert-----------------*/
 
+/*-----------------slide-in-right-----------------*/
 @keyframes slide-in-right {
     0% {
         -webkit-transform: translateX(1000px);
@@ -759,7 +776,8 @@ nav.open~.overlay {
     }
 }
 
-/* Dark mode */
+/*----------------- end slide-in-right-----------------*/
+/*----------------- Dark mode ----------------- */
 
 body.dark-mode {
     background: var(--color-dark-secondary);
@@ -826,7 +844,8 @@ body.dark-mode {
         background: var(--color-comment-background);
         color: var(--color-dark-gray);
     }
-    .comment-search input{
+
+    .comment-search input {
         color: var(--color-dark-gray);
     }
 
@@ -869,14 +888,15 @@ body.dark-mode {
     .main .right .right-warpper .contact .contact-btn {
         color: var(--color-dark-gray);
     }
-    .last-message{
+
+    .last-message {
         color: var(--color-dark-gray);
     }
 
 
 }
-
-/* styles for screens smaller than 1500px */
+/*-----------------End Dark mode ----------------- */
+/* Styles for screens smaller than 1500px */
 @media screen and (max-width: 1500px) {
     .mini-post div {
         width: 138px;

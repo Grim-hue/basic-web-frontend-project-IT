@@ -1,3 +1,6 @@
+
+//Handling notification fuction and email verification
+
 // Reference to the alert element
 const alertDiv = document.querySelector('#alert');
 //Get all alert close buttons
@@ -22,7 +25,7 @@ function showAlert(message, type) {
     }
 }
 
-
+// close on any click with class closebtn
 for (let i = 0; i < closeBtn.length; i++) {
     closeBtn[i].onclick = function () {
         alertDiv.className = "";
