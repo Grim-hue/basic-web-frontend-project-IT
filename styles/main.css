@@ -405,14 +405,14 @@ nav.open~.overlay {
     margin: 10px 0;
 }
 
-.main .center .my-post .post-bottom {
+.post-bottom {
     width: 95%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     margin: 5px auto;
 }
 
-.main .center .my-post .post-bottom .post-icon {
+ .post-bottom .post-icon {
     display: flex;
     align-items: center;
     margin: 0 auto;
@@ -420,7 +420,7 @@ nav.open~.overlay {
     cursor: pointer;
 }
 
-.main .center .my-post .post-bottom .post-icon:hover {
+ .post-bottom .post-icon:hover {
     background: #efefef;
     border-radius: 8px;
 }
@@ -496,7 +496,7 @@ nav.open~.overlay {
 }
 
 .main .center .friend-post .info .emoji-img p {
-    margin-left: 10px;
+    margin-left: 5px;
     font-size: 16px;
     color: #919191;
 }
@@ -818,12 +818,16 @@ body.dark-mode {
     }
 
 
-    .main .center .my-post .post-bottom .post-icon:hover {
+    .post-bottom .post-icon:hover {
         background: var(--color-dark-primary);
     }
 
     .main .center .friend-post .comment-wrapper .comment-search {
         background: var(--color-comment-background);
+        color: var(--color-dark-gray);
+    }
+    .comment-search input{
+        color: var(--color-dark-gray);
     }
 
     .main .center .friend-post .comment-wrapper .comment-search i {
