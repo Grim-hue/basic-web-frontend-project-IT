@@ -446,6 +446,13 @@ nav.open~.overlay {
     background: #efefef;
     border-radius: 8px;
 }
+.preview img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0%;
+}
 
 /*-----------------End My-post---------------*/
 
@@ -493,7 +500,7 @@ nav.open~.overlay {
     text-decoration: underline;
 }
 
-.friend-post img {
+.friend-post img,video {
     width: 100%;
     height: 100%;
     border-radius: 0px;

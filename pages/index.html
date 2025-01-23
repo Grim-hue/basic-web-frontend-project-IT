@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- home page with left side profile, center post, right contacts -->
+
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -13,6 +14,10 @@
 </head>
 
 <body>
+    <!--Alert div-->
+    <div id="alert"><span class="closebtn">&times;</span>
+        <div></div>
+    </div>
     <!-- Container for sidebar/menu -->
     <nav id="sidebar-container">
         <div class="logo">
@@ -124,6 +129,7 @@
         <!------------center---------------------->
 
         <div class="center mainpost">
+            <!------------user post section---------------------->
             <section class="my-post">
                 <form>
                     <div class="search-top">
@@ -133,26 +139,38 @@
                     </div>
                     <hr>
                     <div class="post-bottom">
-                        <div class="post-icon" aria-label="Add a video">
+                        <div class="post-icon" id="vid" aria-label="Add a video">
                             <i class="bx bxs-videos" style="margin-right: 10px;"></i>
                             <p>Video</p>
                             <input type="file" class="form-control file-input" id="videoUpload" name="videoUpload"
-                                style="display: none;" />
+                                style="display: none;" accept="video/*" />
                         </div>
-                        <div class="post-icon" aria-label="Add a photo">
+                        <div class="post-icon" id="clickAddPhoto" aria-label="Add a photo">
                             <i class="bx bxs-photo-album" style="margin-right: 10px;"></i>
                             <p>Photo</p>
                             <input type="file" class="form-control file-input" id="photoUpload" name="photoUpload"
-                                style="display: none;" />
+                                style="display: none;" accept="image/*" />
                         </div>
-                        <div class="post-icon" aria-label="Publish your post">
+                        <div class="post-icon" id="postClick" aria-label="Publish your post">
                             <i class="bx bxs-paper-plane" style="margin-right: 10px;"></i>
                             <p>Post</p>
                         </div>
                     </div>
+                    <!-- Display the preview of the selected input -->
+                    <div id="previewContainerPhoto" class="preview">
+                           
+                    </div>
+                    <!-- Display the preview of the selected input -->
+                    <div id="previewContainerVideo" class="preview">
+                           
+                    </div>
                 </form>
             </section>
+            <!------------load new div---------------------->
+            <div id="added-post">
 
+            </div>
+            <!------------hard coded friend-post---------------------->
             <!-- Post 1 -->
             <section class="friend-post">
                 <div class="friend-post-top">
@@ -175,7 +193,7 @@
                 <div class="info">
                     <div class="emoji-img">
                         <img src="../images/like.png" alt="Like emoji">
-                        
+
                         <p>You, Sarah Green, and 12K others</p>
                     </div>
                     <div class="comment">
@@ -207,7 +225,7 @@
                     </div>
                 </div>
             </section>
-
+            <!------------hard coded friend-post---------------------->
             <!-- Post 2 -->
             <section class="friend-post">
                 <div class="friend-post-top">
@@ -263,6 +281,7 @@
                     </div>
                 </div>
             </section>
+            <!------------hard coded friend-post---------------------->
             <!-- Post 3 -->
             <section class="friend-post">
                 <div class="friend-post-top">
@@ -317,6 +336,7 @@
                     </div>
                 </div>
             </section>
+            <!------------hard coded friend-post---------------------->
             <!-- Post 4 -->
             <section class="friend-post">
                 <div class="friend-post-top">
@@ -381,7 +401,7 @@
                 </div>
             </section>
 
-
+            <!------------hard coded friend-post---------------------->
             <!-- Post 5 -->
             <section class="friend-post">
                 <div class="friend-post-top">
@@ -444,7 +464,7 @@
                     </div>
                 </div>
             </section>
-
+            <!------------hard coded friend-post---------------------->
             <!-- Post 6 -->
             <section class="friend-post">
                 <div class="friend-post-top">
@@ -531,7 +551,7 @@
 
                 <!------------------Conactos------------------>
                 <section class="mensagens">
-
+                    <!------------link for the real chat---------------------->
                     <div class="contact">
                         <a href="chat.html" style="text-decoration: none;" aria-label="Chat with Other User">
                             <button class="contact-btn">
@@ -545,7 +565,7 @@
                             </button>
                         </a>
                     </div>
-
+                    <!------------link for the fake chats---------------------->
                     <div class="contact">
                         <a href="fake_chat1.html" style="text-decoration: none;" aria-label="Chat with Ethan Williams">
                             <button class="contact-btn">
@@ -634,6 +654,8 @@
     </div>
     </div>
     <script src="../scripts/script.js"></script>
+    <script src="../scripts/utils.js"></script>
+    <script src="../scripts/functional-post.js"></script>
 </body>
 
 </html>
