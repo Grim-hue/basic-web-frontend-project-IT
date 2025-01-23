@@ -1,7 +1,7 @@
 // Handling the initialization of EmailJS
 (function () {
     // Initialize EmailJS with the id
-    emailjs.init("04cXcJ1FU_gkzx53x");
+    emailjs.init("");
 })();
 
 // Function to send an email using EmailJS

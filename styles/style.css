@@ -103,6 +103,7 @@ nav .logo {
     margin-right: 13px;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     cursor: pointer;
+    border: 0px;
 }
 
 .toggle-button:hover i {
