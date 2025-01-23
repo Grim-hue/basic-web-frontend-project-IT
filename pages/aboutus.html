@@ -2,66 +2,75 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Web</title>
+    <meta charset="UTF-8"> <!-- Sets the character encoding for the document -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" > <!-- Ensures compatibility with IE browsers -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" > <!-- Sets viewport for responsive design -->
+    <title>About us</title> <!-- Title of the web page -->
+
     <!-- CSS -->
-    <link rel="stylesheet" href="../styles/style.css" />
-    <link rel="stylesheet" href="../styles/aboutus.css" />
+    <link rel="stylesheet" href="../styles/style.css" > <!-- Links the global stylesheet for shared styles -->
+    <link rel="stylesheet" href="../styles/aboutus.css" > <!-- Links a stylesheet specific to the About Us page -->
+
     <!-- Boxicons -->
-    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
-
-
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" > <!-- Includes an external icon library for consistent UI elements -->
 </head>
 
 <body>
-    <!--Alert div-->
-    <div id="alert"><span class="closebtn">&times;</span>
-        <div></div>
+    <!-- Alert div for displaying error or success messages to the user -->
+    <div id="alert">
+        <span class="closebtn">&times;</span> <!-- Button to close the alert -->
+        <div></div> <!-- Placeholder for alert content -->
     </div>
-    <!-- Container for sidebar/menu -->
+
+    <!-- Sidebar navigation menu -->
     <nav id="sidebar-container">
         <div class="logo">
-            <i class="bx bx-menu menu-icon"></i>
-            <span class="logo-name">Echo Link</span>
+            <i class="bx bx-menu menu-icon"></i> <!-- Icon used for toggling the menu -->
+            <span class="logo-name">Echo Link</span> <!-- Displays the name of the application -->
         </div>
+
+        <!-- Dark mode toggle button -->
         <div>
-            <button id="dark-mode-toggle" class="bx toggle-button"><i id="moon-sun" class="bx bxs-moon"></i></button>
+            <button id="dark-mode-toggle" class="bx toggle-button" aria-label="switch theme" type="button">
+                <i id="moon-sun" class="bx bxs-moon"></i> <!-- Icon for toggling between light and dark modes -->
+            </button>
         </div>
-        <!-- In the menu -->
+
+        <!-- Sidebar menu items -->
         <div class="sidebar">
             <div class="logo">
-                <i class="bx bx-menu menu-icon"></i>
-                <span class="logo-name">Echo Link</span>
+                <i class="bx bx-menu menu-icon"></i> <!-- Repeated menu icon for sidebar consistency -->
+                <span class="logo-name">Echo Link</span> <!-- Sidebar branding -->
             </div>
 
             <div class="sidebar-content">
+                <!-- List of primary navigation links -->
                 <ul class="lists">
                     <li class="list">
                         <a href="index.html" class="nav-link">
-                            <i class="bx bx-home-alt icon"></i>
+                            <i class="bx bx-home-alt icon"></i> <!-- Icon representing the Dashboard -->
                             <span class="link">Dashboard</span>
                         </a>
                     </li>
                     <li class="list">
                         <a href="chat.html" class="nav-link">
-                            <i class="bx bx-message-rounded icon"></i>
+                            <i class="bx bx-message-rounded icon"></i> <!-- Icon representing the Messages page -->
                             <span class="link">Messages</span>
                         </a>
                     </li>
                     <li class="list">
                         <a href="aboutus.html" class="nav-link">
-                            <i class="bx bx-info-circle icon"></i>
+                            <i class="bx bx-info-circle icon"></i> <!-- Icon for the About Us page -->
                             <span class="link">About us</span>
                         </a>
                     </li>
                 </ul>
 
+                <!-- Logout link -->
                 <ul class="lists">
                     <li class="list">
                         <a href="#" onclick="logout()" class="nav-link">
-                            <i class="bx bx-log-out icon"></i>
+                            <i class="bx bx-log-out icon"></i> <!-- Icon for logging out -->
                             <span class="link">Logout</span>
                         </a>
                     </li>
@@ -69,32 +78,34 @@
             </div>
         </div>
     </nav>
-    <!-- Menu Overlay -->
+
+    <!-- Menu overlay for toggling sidebar in responsive designs -->
     <section class="overlay"></section>
 
-    <!------------main--------------->
-
+    <!-- Main content area of the page -->
     <div class="main">
-        <!------------center---------------------->
-
-        <div class="about-us-box ">
+        <!-- About Us Section -->
+        <div class="about-us-box">
+            <!-- About Us article -->
             <article class="about-us-wrapper">
 
                 <div class="text-block-center">
+                    <!-- Image block -->
                     <div class="img">
-                        <img src="../images/about_us_1.png">
+                        <img src="../images/about_us_1.png" alt="About Us picture 1"> <!-- Decorative image to enhance About Us section -->
                     </div>
 
-                    <div class="text-wrapper" style="margin-left: 50px;width: 45%;">
+                    <!-- Text content block -->
+                    <div class="text-wrapper">
                         <header>
-                            <h2>About Us</h2>
+                            <h2>About Us</h2> <!-- Title for the About Us section -->
                         </header>
                         <p>
                             Welcome to <strong>Echo Link</strong>, a platform designed to amplify your voice and connect
                             you with a vibrant community. Whether you’re here to chat, share posts, or explore the
                             thoughts and ideas of others, Echo Link is your digital space to express and engage.
                         </p>
-                        <h3>Built by Two Dreamers</h3>
+                        <h3>Built by Two Dreamers</h3> <!-- Subtitle emphasizing the creators -->
                         <p>
                             Echo Link was created by two passionate individuals, André and Carlos, with a shared vision:
                             to create a simple, user-friendly platform where people can share their thoughts, start
@@ -104,19 +115,21 @@
                         </p>
                         <p class="small-info">
                             <i class="bx bxs-info-circle"></i> Echo Link is a project developed as part of the ISTEC
-                            discipline.
-
+                            discipline. <!-- Note about the academic origin of the project -->
                         </p>
                     </div>
                 </div>
 
             </article>
+
+            <!-- Why Echo Link article -->
             <article class="about-us-wrapper">
 
                 <div class="text-block-center">
-                    <div class="text-wrapper" style="margin-left: 50px;width: 45%;">
+                    <!-- Text content block -->
+                    <div class="text-wrapper">
                         <header>
-                            <h2>Why Echo Link?</h3>
+                            <h2>Why Echo Link?</h2> <!-- Title for the Why Echo Link section -->
                         </header>
                         <p>
                             We believe everyone deserves a voice. That’s why we’ve combined the power of chat and
@@ -124,7 +137,7 @@
                             that’s ready to engage, Echo Link is here to make sharing your story effortless and
                             meaningful.
                         </p>
-                        <h3>Future Plans</h3>
+                        <h3>Future Plans</h3> <!-- Subtitle highlighting future developments -->
                         <p>
                             Echo Link is just the beginning. We aim to continuously improve and expand the platform
                             to
@@ -136,31 +149,36 @@
                             community!
                         </p>
                     </div>
+                    <!-- Image block -->
                     <div class="img">
-                        <img src="../images/about_us_2.png">
+                        <img src="../images/about_us_2.png" alt="About Us picture 2"> <!-- Image complementing the Why Echo Link content -->
                     </div>
                 </div>
             </article>
+
+            <!-- Contact Us article -->
             <article class="about-us-wrapper">
                 <div class="text-block-center">
+                    <!-- Image block -->
                     <div class="img">
-                        <img src="../images/about_us_3.png">
+                        <img src="../images/about_us_3.png " alt="About Us picture 3"> <!-- Visual representation for Contact Us section -->
                     </div>
-                    <div class="text-wrapper" style="margin-left: 50px; width: 42%;">
+                    <!-- Contact form block -->
+                    <div class="text-wrapper">
                         <header>
-                            <h2>Contact us</h3>
+                            <h2>Contact us</h2> <!-- Title for the Contact Us section -->
                         </header>
                         <div class="formcarry-container">
-                            <form action="#" method="POST" class="formcarry-form">
-                                <label for="name">Your Name</label>
-                                <input type="text" id="name" name="fullName" placeholder="Enter your name" required />
+                            <form action="#" method="POST" class="formcarry-form"> <!-- Form for user inquiries -->
+                                <label for="name">Your Name</label> <!-- Label for the name input field -->
+                                <input type="text" id="name" name="fullName" placeholder="Enter your name" required> <!-- Text input for user's name -->
 
-                                <label for="email">Your Email Address</label>
-                                <input type="email" id="email" name="email" placeholder="Enter your email" required />
+                                <label for="email">Your Email Address</label> <!-- Label for the email input field -->
+                                <input type="email" id="email" name="email" placeholder="Enter your email" required> <!-- Email input for user -->
 
-                                <label for="message">Your Message</label>
+                                <label for="message">Your Message</label> <!-- Label for the message textarea -->
                                 <textarea name="message" id="message" cols="30" rows="10"
-                                    placeholder="Enter your message"></textarea>
+                                    placeholder="Enter your message"></textarea> <!-- Multi-line text area for user messages -->
 
                                 <button id="submit" type="submit">Send</button>
                             </form>
@@ -172,10 +190,13 @@
         </div>
 
     </div>
-    <!-- Import so send email functional -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <!-- EmailJS library for sending emails directly from the browser -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <!-- Main script for application functionality -->
     <script src="../scripts/script.js"></script>
+    <!-- Utility script with helper functions -->
     <script src="../scripts/utils.js"></script>
+    <!-- Script for handling email sending via the Contact Us form -->
     <script src="../scripts/email-send.js"></script>
 
 </body>

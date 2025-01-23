@@ -11,49 +11,54 @@
 
 
 
-/* Define color variables */
+/* ----------------- Color Variables ----------------- */
+/* Define color variables for light and dark mode themes */
 :root {
     /* Light Mode Colors */
-    --color-light-bg: #fff;
-    --color-light-primary: #4070f4;
-    --color-light-secondary: #f7f7f7;
-    --color-light-tirdh: #f5f5f5;
-    --color-light-gray: #3b3b3b;
-    --color-light-overlay: rgba(0, 0, 0, 0.3);
-    --color-light-shadow: rgba(0, 0, 0, 0.1);
+    --color-light-bg: #fff; /* Background for light mode */
+    --color-light-primary: #4070f4; /* Primary color */
+    --color-light-secondary: #f7f7f7; /* Secondary background color */
+    --color-light-tirdh: #f5f5f5; /* Neutral tertiary color */
+    --color-light-gray: #3b3b3b; /* Gray text color */
+    --color-light-overlay: rgba(0, 0, 0, 0.3); /* Overlay color */
+    --color-light-shadow: rgba(0, 0, 0, 0.1); /* Shadow for light elements */
 
     /* Dark Mode Colors */
-    --color-dark-bg: #1c1c1d;
-    --color-dark-primary: #bb86fc;
-    --color-dark-secondary: #252728;
-    --color-dark-gray: #e0e0e0;
-    --color-comment-background: #333334;
-    --color-comment-background-hover: #3b3b3e;
-    --color-dark-overlay: rgba(255, 255, 255, 0.3);
+    --color-dark-bg: #1c1c1d; /* Background for dark mode */
+    --color-dark-primary: #bb86fc; /* Primary color in dark mode */
+    --color-dark-secondary: #252728; /* Secondary background color */
+    --color-dark-gray: #e0e0e0; /* Gray text in dark mode */
+    --color-comment-background: #333334; /* Comment background */
+    --color-comment-background-hover: #3b3b3e; /* Hover state for comment background */
+    --color-dark-overlay: rgba(255, 255, 255, 0.3); /* Overlay for dark mode */
 }
 
-/* Google Fonts - Poppins */
+/* ----------------- Google Fonts ----------------- */
+/* Import the Poppins font family */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
+/* ----------------- Reset and Global Styles ----------------- */
+/* Apply universal styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins", sans-serif; /* Use Poppins as the default font */
 }
 
 .flex-center {
     display: flex;
-    align-items: center;
+    align-items: center; 
 }
 
+/* Body styling with default light background */
 body {
     min-height: 100%;
-    background: var(--color-light-secondary);
-
+    background: var(--color-light-secondary); /* Default background */
 }
 
 /* ----------------- Sidebar ----------------- */
+/* Navigation bar styling */
 nav {
     position: fixed;
     top: 0;
@@ -65,10 +70,10 @@ nav {
     background: var(--color-light-bg);
     box-shadow: 0 0 8px var(--color-light-shadow);
     justify-content: space-between;
-
     z-index: 2;
 }
 
+/* Logo and menu icon styling */
 nav .logo {
     display: flex;
     align-items: center;
@@ -88,39 +93,40 @@ nav .logo {
     font-weight: 500;
 }
 
+/* Toggle button for opening the sidebar */
 .toggle-button {
     font-size: large;
     border-radius: 25px;
     padding: 8px;
     background: #e9e9e9;
     border-color: var(--color-light-bg);
-    border-radius: 100px;
-    border: 0px solid #3a3a3a;
     margin-right: 13px;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     cursor: pointer;
 }
 
 .toggle-button:hover i {
-    animation: tada 1.5s ease;
+    animation: tada 1.5s ease; /* Animation effect on hover */
 }
 
+/* Sidebar styling and transition effect */
 nav .sidebar {
     position: fixed;
     top: 0;
-    left: -100%;
+    left: -100%; /* Initially hidden off-screen */
     height: 100%;
     width: 260px;
     padding: 20px 0;
     background-color: var(--color-light-bg);
     box-shadow: 0 5px 1px var(--color-light-shadow);
-    transition: all 0.4s ease;
+    transition: all 0.4s ease; /* Smooth transition when opening */
 }
 
 nav.open .sidebar {
-    left: 0;
+    left: 0; /* Moves sidebar into view */
 }
 
+/* Sidebar content layout */
 .sidebar .sidebar-content {
     display: flex;
     height: 100%;
@@ -129,6 +135,7 @@ nav.open .sidebar {
     padding: 30px 16px;
 }
 
+/* List of sidebar navigation links */
 .sidebar-content .list {
     list-style: none;
 }
@@ -142,11 +149,12 @@ nav.open .sidebar {
     text-decoration: none;
 }
 
+/* Hover effect for navigation links */
 .lists .nav-link:hover {
     background-color: var(--color-light-primary);
-
 }
 
+/* Icon and text styling within links */
 .nav-link .icon {
     margin-right: 14px;
     font-size: 20px;
@@ -159,74 +167,65 @@ nav.open .sidebar {
     font-weight: 400;
 }
 
+/* Hover effect changes icon and link color */
 .lists .nav-link:hover .icon,
 .lists .nav-link:hover .link {
     color: var(--color-light-bg);
 }
 
-/*----------------- End Sidebar -----------------*/
+/* ----------------- End Sidebar ----------------- */
+
 
 /*----------------- overlay -----------------*/
 .overlay {
     position: fixed;
     top: 0;
-    left: -100%;
+    left: -100%; /* Hidden initially */
     height: 1000vh;
     width: 200%;
-    opacity: 0;
-    pointer-events: none;
+    opacity: 0; /* Transparent initially */
+    pointer-events: none; /* Disabled interaction */
     transition: all 0.4s ease;
     background: var(--color-light-overlay);
     z-index: 3;
 }
 
+/* Overlay when navigation is open */
 nav.open~.overlay {
     opacity: 1;
     left: 260px;
     pointer-events: auto;
 }
-
 /*----------------- End Overlay -----------------*/
 
 /*----------------- Moon animation -----------------*/
 
 @keyframes Moontada {
     from {
-        transform: scale3d(1, 1, 1)
+        transform: scale3d(1, 1, 1);
     }
-
-    10%,
-    20% {
-        transform: scale3d(.95, .95, .95) rotate3d(0, 0, 1, -10deg)
+    10%, 20% {
+        transform: scale3d(.95, .95, .95) rotate3d(0, 0, 1, -10deg);
     }
-
-    30%,
-    50%,
-    70%,
-    90% {
-        transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, 10deg)
+    30%, 50%, 70%, 90% {
+        transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, 10deg);
     }
-
-    40%,
-    60%,
-    80% {
-        transform: rotate3d(0, 0, 1, -10deg)
+    40%, 60%, 80% {
+        transform: rotate3d(0, 0, 1, -10deg);
     }
-
     to {
-        transform: scale3d(1, 1, 1)
+        transform: scale3d(1, 1, 1);
     }
 }
 
 /*----------------- End Moon animation -----------------*/
+/*----------------- Left Section ------------------*/
 
-/*-----------------Left------------------*/
-
+/* Left Section styling */
 .main .left {
     width: 24%;
     height: 89vh;
     overflow: hidden;
-    overflow-y: hidden;
     position: fixed;
     left: 15px;
     background: var(--color-light-bg);
@@ -237,6 +236,7 @@ nav.open~.overlay {
     padding-right: 0 !important;
 }
 
+/* Custom scrollbar styling */
 .main .left::-webkit-scrollbar {
     width: 7px;
 }
@@ -244,21 +244,19 @@ nav.open~.overlay {
 .main .left::-webkit-scrollbar-thumb {
     border-radius: 20px;
     background: var(--color-light-tirdh);
-
 }
 
 .main .left:hover::-webkit-scrollbar-thumb {
     background: #cccccc;
 }
 
+/* User info section */
 .left .info {
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-top: 20px;
     justify-content: space-around;
-
-
 }
 
 .left-wrapper {
@@ -266,6 +264,7 @@ nav.open~.overlay {
     padding-bottom: 12px;
 }
 
+/* Profile picture styling */
 .main-pfp {
     display: flex;
     flex-direction: column;
@@ -282,19 +281,19 @@ nav.open~.overlay {
     border: 4px solid #acacac6b;
 }
 
-
 .main-pfp p {
     font-size: 15px;
 }
 
+/* Additional details section */
 .extra-detail {
     display: flex;
     align-items: center;
     color: #00000069;
     margin-left: 3vh;
-
 }
 
+/* Mini post hover effects */
 .mini-post {
     display: flex;
     flex-direction: row;
@@ -312,10 +311,10 @@ nav.open~.overlay {
 .mini-post div:hover {
     width: 220px;
     height: 220px;
-    transition: 2s;
     margin: 5px;
 }
 
+/* Reduce size of non-hovered items */
 .left-post-wrapper:hover .mini-post div:not(:hover) {
     width: 180px;
     height: 180px;
@@ -329,6 +328,7 @@ nav.open~.overlay {
     object-position: center;
 }
 
+/* Post and followers section */
 .post,
 .followers,
 .following {
@@ -341,6 +341,7 @@ nav.open~.overlay {
     margin-right: 25px;
 }
 
+/* Additional detail styling */
 .extra-detail .date,
 .gender {
     padding: 5px;
@@ -350,44 +351,49 @@ nav.open~.overlay {
     margin-top: 23px;
 }
 
-/*----------------- End Left------------------*/
+/*----------------- End Left Section ------------------*/
 
-
-/*-----------------main---------------*/
+/*----------------- Main ---------------*/
+/* Main layout container for the page */
 .main {
     display: flex;
     margin-top: 60px;
     background: var(--color-light-tirdh);
-
 }
 
+/* Center section of the main layout */
 .main .center {
     width: 50%;
     height: auto;
     padding: 20px 20px 0 20px;
     background: var(--color-light-tirdh);
-
     margin-left: 25%;
 }
 
+/* Hide scrollbar for center section */
 .main .center::-webkit-scrollbar {
     width: 0;
 }
 
 /*-----------------my-post---------------*/
+/* Container for "My Post" (user's post input area) */
 .my-post {
     width: 100%;
     height: auto;
     background: var(--color-light-bg);
-
     padding: 10px 15px;
     border-radius: 7px;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
     margin: 10px 0;
     min-width: 439px;
-
 }
 
+/* Utility class for small right margin */
+.mr-10 {
+    margin-right: 10px;
+}
+
+/* User profile picture inside "My Post" */
 .my-post img {
     width: 45px;
     height: 45px;
@@ -396,11 +402,13 @@ nav.open~.overlay {
     object-position: center;
 }
 
+/* Top section with input field for new post creation */
 .my-post .search-top {
     display: flex;
     align-items: center;
 }
 
+/* Input field styling */
 .my-post .search-top input {
     width: 90%;
     padding: 10px;
@@ -410,7 +418,6 @@ nav.open~.overlay {
     background: #efefef;
     border-radius: 30px;
     font-size: 17px;
-
 }
 
 .my-post .search-top input:hover {
@@ -418,15 +425,16 @@ nav.open~.overlay {
     cursor: text;
 }
 
+/* Divider line inside "My Post" */
 .my-post hr {
     width: 100%;
     height: 1px;
     background: #cccccc;
-
     border: 0;
     margin: 10px 0;
 }
 
+/* Bottom section of "My Post" with interaction icons */
 .post-bottom {
     width: 95%;
     display: grid;
@@ -434,6 +442,7 @@ nav.open~.overlay {
     margin: 5px auto;
 }
 
+/* Styling for individual interaction icons */
 .post-bottom .post-icon {
     display: flex;
     align-items: center;
@@ -446,7 +455,9 @@ nav.open~.overlay {
     background: #efefef;
     border-radius: 8px;
 }
-.preview img{
+
+/* Image preview styling */
+.preview img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -458,6 +469,7 @@ nav.open~.overlay {
 
 /*-----------------friend-post---------------*/
 
+/* Container for a friend's post */
 .friend-post {
     margin: 10px 0;
     width: 100%;
@@ -469,6 +481,7 @@ nav.open~.overlay {
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Top section of a friend's post (name and options) */
 .friend-post .friend-post-top {
     display: flex;
     align-items: center;
@@ -476,11 +489,13 @@ nav.open~.overlay {
     margin-bottom: 15px;
 }
 
+/* Name and profile image container */
 .friend-post .friend-post-top .img-name {
     display: flex;
     align-items: center;
 }
 
+/* Friend's profile image */
 .friend-post .friend-post-top .img-name img {
     width: 45px;
     height: 45px;
@@ -491,6 +506,7 @@ nav.open~.overlay {
     cursor: pointer;
 }
 
+/* Friend's name with hover effect */
 .friend-post .friend-post-top .img-name .friends-title .friends-name {
     font-weight: bold;
     cursor: pointer;
@@ -500,15 +516,16 @@ nav.open~.overlay {
     text-decoration: underline;
 }
 
-.friend-post img,video {
+/* Media content inside the post (images or videos) */
+.friend-post img, video {
     width: 100%;
     height: 100%;
-    border-radius: 0px;
     object-fit: cover;
     object-position: center;
     border-radius: 5px;
 }
 
+/* Info section (reactions and comments) */
 .friend-post .info {
     display: flex;
     align-items: center;
@@ -516,21 +533,25 @@ nav.open~.overlay {
     margin: 10px 0;
 }
 
+/* Reaction emojis container */
 .friend-post .info .emoji-img {
     display: flex;
 }
 
+/* Emoji images */
 .friend-post .info .emoji-img img {
     width: 20px;
     height: 20px;
 }
 
+/* Emoji text */
 .friend-post .info .emoji-img p {
     margin-left: 5px;
     font-size: 16px;
     color: #919191;
 }
 
+/* Comment section styling */
 .friend-post .info .comment {
     display: flex;
     align-items: center;
@@ -542,24 +563,25 @@ nav.open~.overlay {
     color: #919191;
 }
 
+/* Divider line within a friend's post */
 .friend-post hr {
     width: 100%;
     height: 1px;
     background: #cccccc;
-
     border: 0;
     margin: 10px 0;
 }
 
-
 /*----------------- friend-post comments---------------*/
 
-
+/* Wrapper for the comment section in a friend's post */
 .friend-post .comment-wrapper {
     display: flex;
     align-items: center;
+    margin-top: 10px;
 }
 
+/* Profile image in the comment section */
 .friend-post .comment-wrapper img {
     width: 35px;
     height: 35px;
@@ -569,26 +591,32 @@ nav.open~.overlay {
     margin-right: 15px;
 }
 
+/* Small status indicator circle next to the profile image */
 .friend-post .comment-wrapper .circle {
     width: 10px;
     height: 10px;
     border-radius: 50%;
     background: #27cc37;
     border: 2px solid var(--color-light-bg);
-    ;
     position: relative;
     top: 15px;
     right: 25px;
 }
 
+/* Input container for adding a comment */
 .friend-post .comment-wrapper .comment-search {
     width: 95%;
     padding: 5px 15px;
     background: #efefef;
-
     border-radius: 30px;
 }
 
+/* Post content overflow behavior */
+.friend-post .post-content {
+    overflow-x: clip;
+}
+
+/* Text input for writing a comment */
 .friend-post .comment-wrapper .comment-search input {
     width: 85%;
     height: 30px;
@@ -597,25 +625,26 @@ nav.open~.overlay {
     outline: none;
 }
 
+/* Icon styling within the comment input container */
 .friend-post .comment-wrapper .comment-search i {
     padding: 0 5px;
     color: #919191;
 }
 
+
 /*----------------- end friend-post && commets---------------*/
 
 /*-----------------right------------------*/
 
+/* Right Section container */
 .main .right {
     width: 24%;
     height: 89vh;
     overflow: hidden;
     overflow-y: scroll;
-
     position: fixed;
     right: 0;
     background: var(--color-light-bg);
-
     padding: 10px 5px 10px 15px;
     border-radius: 7px;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
@@ -624,6 +653,7 @@ nav.open~.overlay {
     min-width: 180px;
 }
 
+/* Custom scrollbar styling */
 .main .right::-webkit-scrollbar {
     width: 7px;
 }
@@ -631,14 +661,13 @@ nav.open~.overlay {
 .main .right::-webkit-scrollbar-thumb {
     border-radius: 20px;
     background: var(--color-light-tirdh);
-
 }
 
 .main .right:hover::-webkit-scrollbar-thumb {
     background: #cccccc;
 }
 
-
+/* Title styling for the contact section */
 .main .right .right-warpper .contact-title {
     display: flex;
     align-items: center;
@@ -650,11 +679,18 @@ nav.open~.overlay {
     margin: 5px 0;
 }
 
+/* Hover effect for each contact item */
 .main .right .right-warpper .contact:hover {
     background: #e3e3e3;
     border-radius: 25px;
 }
 
+/* Styling for contact links */
+.main .right .right-warpper .contact a {
+    text-decoration: none;
+}
+
+/* Contact button styling */
 .main .right .right-warpper .contact .contact-btn {
     border-style: none;
     background-color: transparent;
@@ -663,8 +699,10 @@ nav.open~.overlay {
     align-items: center;
     cursor: pointer;
     justify-content: space-between;
+    color: black;
 }
 
+/* Contact profile image styling */
 .main .right .right-warpper .contact img {
     width: 45px;
     height: 45px;
@@ -672,13 +710,14 @@ nav.open~.overlay {
     object-position: center;
     border-radius: 50%;
     margin: 8px 15px 8px 6px;
-
 }
 
+/* Text styling for contact names */
 .main .right .right-warpper .contact p {
     font-size: 16px;
 }
 
+/* Icon styling for contact actions */
 .main .right .right-warpper .contact i {
     margin-right: 10px;
     font-size: 21px;
@@ -687,6 +726,7 @@ nav.open~.overlay {
 /*-----------------end right------------------*/
 
 /*-----------------notification && last message------------------*/
+/*Styling for notification on the user last message on the right*/
 .notification {
     border-radius: 50%;
     background: red;
@@ -698,7 +738,7 @@ nav.open~.overlay {
     align-items: center;
     justify-content: center;
 }
-
+/*Faded message*/
 .last-message {
     width: 100%;
     display: flex;
@@ -789,7 +829,7 @@ nav.open~.overlay {
 body.dark-mode {
     background: var(--color-dark-secondary);
 
-    nav {
+    nav{
         background-color: var(--color-dark-secondary);
     }
 

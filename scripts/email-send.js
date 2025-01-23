@@ -1,56 +1,60 @@
-
-//Handling sending email and form script
-
+// Handling the initialization of EmailJS
 (function () {
-    emailjs.init("");
+    // Initialize EmailJS with the id
+    emailjs.init("04cXcJ1FU_gkzx53x");
 })();
 
+// Function to send an email using EmailJS
 async function sendEmail(name, from, body, btn) {
+    // Set the parameters required by the EmailJS template
     var templateParams = {
-        reply_to: from,
-        from_name: name,
-        message: body
-      };
-    
-      emailjs.send('service_3j57mek', 'template_gxbebhk', templateParams)
+        reply_to: from,  // Reply-to email address
+        from_name: name, // Name of the sender
+        message: body    // Email message body
+    };
+
+    // Send email using EmailJS and handle success/error responses
+    emailjs.send('service_3j57mek', 'template_gxbebhk', templateParams)
         .then(function(response) {
             showAlert('Mail sent successfully', 'success');
+            // Reset the button text and state
             btn.innerHTML = 'Send';
-            btn.disabled = false; 
+            btn.disabled = false;
         }, function(error) {
             showAlert('Failed to send email. Check the console for details.', 'error');
+            // Reset the button text and state
             btn.innerHTML = 'Send';
-            btn.disabled = false; 
+            btn.disabled = false;
         });
 }
 
-document.querySelector('.formcarry-form').addEventListener('submit',async function (event) {
-    // Prevent the default form submission
+// Event listener for form submission
+document.querySelector('.formcarry-form').addEventListener('submit', async function (event) {
+    // Prevent the default form submission behavior
     event.preventDefault();
 
-    // Get form inputs
+    // Retrieve input values from the form fields
     const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
+    const email = document.getElementById('email').value.trim(); 
+    const message = document.getElementById('message').value.trim(); 
     const btn = document.getElementById('submit');
 
-    // Validation
+    // Validation: Check if all fields are filled
     if (!name || !email || !message) {
         showAlert("All fields are required. Please fill in all fields.", "error");
         return;
     }
 
-    // Email validation
-
+    // Validation: Check if the email address is valid
     if (!validateEmail(email)) {
         showAlert("Please enter a valid email address.", "error");
         return;
     }
 
+    // Update the button to indicate sending process
     btn.innerHTML = 'Sending...';
-    btn.disabled = true; 
-    // If everything is valid, submit the form
-    await sendEmail(email, email, message, btn)
+    btn.disabled = true;
 
-
+    // If validations pass, send the email
+    await sendEmail(email, email, message, btn);
 });

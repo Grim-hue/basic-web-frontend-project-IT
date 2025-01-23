@@ -1,48 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- Login page -->
+
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
+    <meta charset="UTF-8"> <!-- Sets the character encoding for the document -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Ensures compatibility with IE browsers -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Sets viewport for responsive design -->
+
+    <title>Login</title> <!-- Title of the web page -->
+
     <!-- CSS -->
-    <link rel="stylesheet" href="../styles/style.css" />
-    <link rel="stylesheet" href="../styles/login.css" />
+    <link rel="stylesheet" href="../styles/style.css"> <!-- Links the global stylesheet for shared styles -->
+    <link rel="stylesheet" href="../styles/login.css"> <!-- Links a stylesheet specific to the Login page -->
+
     <!-- Boxicons -->
-    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
+    <!-- Includes an external icon library for consistent UI elements -->
 </head>
 
 <body>
+    <!-- Alert container for displaying messages to the user -->
     <div id="alert">
         <div></div>
     </div>
+
+    <!-- Wrapper container for the login form -->
     <div class="wrapper">
         <section class="form login">
-            <header>Echo Link</header>
+            <header>Echo Link</header> <!-- Header displaying the application name -->
+
+            <!-- Login form -->
             <form action="javascript:window.location.href='index.html'" onsubmit="return login()">
+                <!-- Email input field -->
                 <div class="field input">
                     <label>Email Address</label>
                     <input id="email" type="email" name="email" placeholder="Enter your email" required>
                 </div>
+
+                <!-- Password input field -->
                 <div class="field input">
-                    <label>Password</label>
+                    <label>Password</label> 
                     <input id="password" type="password" name="password" placeholder="Enter your password" required>
                     <i class="fas fa-eye"></i>
                 </div>
+
+                <!-- Submit button -->
                 <div class="field button">
-                    <input type="submit" name="submit" value="Continue to Echo">
+                    <button type="submit" name="submit">Continue to Echo</button> <!-- Button to submit the form -->
                 </div>
             </form>
         </section>
     </div>
+    <!-- Utility script with helper functions -->
+    <script src="../scripts/utils.js"></script>
+
+    <!--Script Login functionality -->
+    <script src="../scripts/login.js"></script>
 </body>
 
 </html>
-
-<script src="../scripts/utils.js"></script>
-<script src="../scripts/login.js"></script>
-
-<script>
-
-</script>

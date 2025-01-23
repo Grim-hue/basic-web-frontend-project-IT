@@ -1,12 +1,13 @@
-/* Styles for about us page / with dark mode too */
+/* Styles for the "About Us" page with dark mode support */
 
+/* Main container for the about-us section */
 .about-us-box {
-
     height: auto;
     padding: 20px 20px 0 20px;
     background: var(--color-light-tirdh);
 }
 
+/* Wrapper for the about-us content */
 .about-us-wrapper {
     width: 100%;
     height: auto;
@@ -14,9 +15,9 @@
     padding: 10px 15px;
     box-shadow: 0px 15px 8px rgba(0, 0, 0, 0.2);
     min-width: 1100px;
-
 }
 
+/* Center-aligned text block */
 .text-block-center {
     display: flex;
     align-items: center;
@@ -24,36 +25,42 @@
     margin-bottom: 108px;
 }
 
+/* Styling for image container */
 .img-wrapper {
     width: 100%;
     height: 100%;
     margin: 5px;
 }
 
+/* Styling for text container */
 .text-wrapper {
     margin: 5px;
-    width: 55%;
-
+    width: 45%;
+    margin-left: 50px;
 }
 
-.text-wrapper h1,
-h2,
-h3 {
-    margin: 20px 0px 20px 0px;
+/* Headings within text-wrapper */
+.text-wrapper h1, h2, h3 {
+    margin: 20px 0;
 }
 
+/* Larger font size for h2 */
 .text-wrapper h2 {
     font-size: 70px;
 }
-.small-info{
+
+/* Styling for additional small info text */
+.small-info {
     margin-top: 20px;
     color: #00000036;
 }
+
+/* Formcarry form container and element styles */
 .formcarry-container * {
     box-sizing: border-box;
     font-family: "Inter", sans-serif;
 
-    /* colors */
+    /* Color variables */
     --color-blue: #2552d0;
     --color-light-blue: #3266e3;
     --color-gray: #e5e7eb;
@@ -63,19 +70,20 @@ h3 {
 
 .formcarry-container {
     width: 90%;
-
     display: block;
 }
 
+/* Form labels */
 .formcarry-form label {
     display: block;
     padding: 12px 0 2px 0;
-    letter-spacing: -0.2px;
-    cursor: pointer;
     font-size: 16px;
     font-weight: 700;
+    letter-spacing: -0.2px;
+    cursor: pointer;
 }
 
+/* Inputs and textareas */
 .formcarry-form input,
 .formcarry-form textarea {
     font-size: 16px;
@@ -83,61 +91,67 @@ h3 {
     width: 100%;
     padding: 10px;
     background-color: var(--color-gray);
-    border: none;
     border: 4px solid var(--color-gray);
     outline: none;
     border-radius: 8px;
     color: var(--color-dark-gray);
 }
 
+/* Focus styles for inputs and textareas */
 .formcarry-form input:focus,
 .formcarry-form textarea:focus {
     background-color: var(--color-light-bg);
     color: var(--color-dark-gray);
 }
 
+/* Styles for invalid required fields */
 .formcarry-form input:focus:required:invalid {
     border-color: var(--color-pink);
     background-color: var(--color-light-bg);
 }
 
+/* Submit button */
 .formcarry-form button {
     display: block;
     margin-top: 12px;
     width: 100%;
     padding: 12px 20px;
     border-radius: 8px;
-    border-color: transparent;
     background-color: var(--color-blue);
     color: var(--color-light-bg);
     font-weight: 700;
     font-size: 18px;
-
     transition: 300ms all;
 }
 
+/* Hover effect for submit button */
 .formcarry-form button:hover {
     background-color: var(--color-light-blue);
 }
 
+/* Dark mode styles */
 body.dark-mode {
     .about-us-box {
         background: var(--color-dark);
         color: var(--color-dark-gray);
     }
-    .text-block-center, .about-us-wrapper {
+
+    .text-block-center,
+    .about-us-wrapper {
         background: var(--color-dark-secondary);
         color: var(--color-dark-gray);
     }
+
     .about-us-box {
         background-color: var(--color-dark-bg);
     }
+
     .small-info {
         color: var(--color-dark-gray);
     }
 }
 
-
+/* Responsive styles for smaller screens */
 @media screen and (max-width: 1100px) {
     .text-block-center {
         flex-direction: column;

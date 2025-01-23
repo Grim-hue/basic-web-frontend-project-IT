@@ -3,63 +3,74 @@
 <!-- home page with left side profile, center post, right contacts -->
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Web</title>
+    <meta charset="UTF-8"> <!-- Sets the character encoding for the document -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Ensures compatibility with IE browsers -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Sets viewport for responsive design -->
+    <!-- Sets viewport for responsive design -->
+    <title>Home </title> <!-- Title of the web page -->
     <!-- CSS -->
-    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/style.css"> <!-- Links the global stylesheet for shared styles -->
     <!-- Boxicons -->
-    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
+    <!-- Includes an external icon library for consistent UI elements -->
 </head>
 
 <body>
-    <!--Alert div-->
-    <div id="alert"><span class="closebtn">&times;</span>
-        <div></div>
+    <!-- Alert div for displaying error or success messages to the user -->
+    <div id="alert">
+        <span class="closebtn">&times;</span> <!-- Button to close the alert -->
+        <div></div> <!-- Placeholder for alert content -->
     </div>
-    <!-- Container for sidebar/menu -->
+
+    <!-- Sidebar navigation menu -->
     <nav id="sidebar-container">
         <div class="logo">
-            <i class="bx bx-menu menu-icon"></i>
-            <span class="logo-name">Echo Link</span>
+            <i class="bx bx-menu menu-icon"></i> <!-- Icon used for toggling the menu -->
+            <span class="logo-name">Echo Link</span> <!-- Displays the name of the application -->
         </div>
+
+        <!-- Dark mode toggle button -->
         <div>
-            <button id="dark-mode-toggle" class="bx toggle-button"><i id="moon-sun" class="bx bxs-moon"></i></button>
+            <button id="dark-mode-toggle" class="bx toggle-button" aria-label="switch theme" type="button">
+                <i id="moon-sun" class="bx bxs-moon"></i> <!-- Icon for toggling between light and dark modes -->
+            </button>
         </div>
-        <!-- In the menu -->
+
+        <!-- Sidebar menu items -->
         <div class="sidebar">
             <div class="logo">
-                <i class="bx bx-menu menu-icon"></i>
-                <span class="logo-name">Echo Link</span>
+                <i class="bx bx-menu menu-icon"></i> <!-- Repeated menu icon for sidebar consistency -->
+                <span class="logo-name">Echo Link</span> <!-- Sidebar branding -->
             </div>
 
             <div class="sidebar-content">
+                <!-- List of primary navigation links -->
                 <ul class="lists">
                     <li class="list">
                         <a href="index.html" class="nav-link">
-                            <i class="bx bx-home-alt icon"></i>
+                            <i class="bx bx-home-alt icon"></i> <!-- Icon representing the Dashboard -->
                             <span class="link">Dashboard</span>
                         </a>
                     </li>
                     <li class="list">
                         <a href="chat.html" class="nav-link">
-                            <i class="bx bx-message-rounded icon"></i>
+                            <i class="bx bx-message-rounded icon"></i> <!-- Icon representing the Messages page -->
                             <span class="link">Messages</span>
                         </a>
                     </li>
                     <li class="list">
                         <a href="aboutus.html" class="nav-link">
-                            <i class="bx bx-info-circle icon"></i>
+                            <i class="bx bx-info-circle icon"></i> <!-- Icon for the About Us page -->
                             <span class="link">About us</span>
                         </a>
                     </li>
                 </ul>
 
+                <!-- Logout link -->
                 <ul class="lists">
                     <li class="list">
                         <a href="#" onclick="logout()" class="nav-link">
-                            <i class="bx bx-log-out icon"></i>
+                            <i class="bx bx-log-out icon"></i> <!-- Icon for logging out -->
                             <span class="link">Logout</span>
                         </a>
                     </li>
@@ -67,333 +78,407 @@
             </div>
         </div>
     </nav>
-    <!-- Menu Overlay -->
+    <!-- Menu overlay for toggling sidebar in responsive designs -->
     <section class="overlay"></section>
 
-    <!------------main--------------->
-
+    <!-- Main content area of the page -->
     <div class="main">
-
-        <!------------------left------------------->
-
+        <!-- Left section for user profile and related information -->
         <div class="left">
-
             <section class="left-wrapper">
-
                 <div class="info">
+
+                    <!-- Main profile Dynamic picture and username -->
                     <div class="main-pfp">
-                        <img src="../images/profile.png" id="myPFP" class="pfp" alt="Profile Picture">
+                        <img src="../images/profile.png" class="myPFP pfp" alt=" Your Profile Picture">
                         <p id="name"></p>
                     </div>
 
+                    <!-- Section Dynamic displaying user post stats -->
                     <div class="post">
                         <div><b id="post">0</b></div>
                         <div>Post</div>
                     </div>
+                    <!-- Section Dynamic displaying user followers stats -->
                     <div class="followers">
                         <div><b id="followers">0</b></div>
                         <div>Followers</div>
                     </div>
+                    <!-- Section Dynamic displaying user following stats -->
                     <div class="following">
                         <div><b id="following">0</b></div>
                         <div>Following</div>
                     </div>
                 </div>
-                <div>
 
-                </div>
-
+                <!-- Additional user details section -->
                 <div class="extra-detail">
-                    <p id="date" class="date"></p>|
+                    <!-- Dynamic account creation date -->
+                    <p id="date" class="date"></p> |
+                    <!-- Static gender information with icon -->
                     <p class="gender"><i class="bx bx-male-sign"></i> Male</p>
                 </div>
 
-
             </section>
+
+            <!-- Section for displaying user's mini post previews -->
             <section class="left-post-wrapper">
+
+                <!-- Rows of mini-post previews -->
                 <div class="mini-post">
-                    <div><img src="../images/mini_post_1.png"></div>
-                    <div><img src="../images/mini_post_2.png"></div>
+                    <div><img alt="mini post 1" src="../images/mini_post_1.png"></div>
+                    <div><img alt="mini post 2" src="../images/mini_post_2.png"></div>
                 </div>
                 <div class="mini-post">
-                    <div><img src="../images/mini_post_3.png"></div>
-                    <div><img src="../images/mini_post_4.png"></div>
+                    <div><img alt="mini post 3" src="../images/mini_post_3.png"></div>
+                    <div><img alt="mini post 4" src="../images/mini_post_4.png"></div>
                 </div>
                 <div class="mini-post">
-                    <div><img src="../images/mini_post_5.png"></div>
-                    <div><img src="../images/mini_post_6.png"></div>
+                    <div><img alt="mini post 5" src="../images/mini_post_5.png"></div>
+                    <div><img alt="mini post 6" src="../images/mini_post_6.png"></div>
                 </div>
+
             </section>
         </div>
 
-        <!------------center---------------------->
 
+        <!--Center section for feed and form to post in the feed-->
         <div class="center mainpost">
-            <!------------user post section---------------------->
+            <!-- Section for user to create and publish posts -->
             <section class="my-post">
-                <form>
-                    <div class="search-top">
-                        <img src="../images/profile.png" id="myPFP" class="pfp" alt="Profile Picture">
-                        <input type="text" name="echos" id="echos" placeholder="What's on your mind?"
-                            aria-label="What's on your mind?">
-                    </div>
-                    <hr>
-                    <div class="post-bottom">
-                        <div class="post-icon" id="vid" aria-label="Add a video">
-                            <i class="bx bxs-videos" style="margin-right: 10px;"></i>
-                            <p>Video</p>
-                            <input type="file" class="form-control file-input" id="videoUpload" name="videoUpload"
-                                style="display: none;" accept="video/*" />
-                        </div>
-                        <div class="post-icon" id="clickAddPhoto" aria-label="Add a photo">
-                            <i class="bx bxs-photo-album" style="margin-right: 10px;"></i>
-                            <p>Photo</p>
-                            <input type="file" class="form-control file-input" id="photoUpload" name="photoUpload"
-                                style="display: none;" accept="image/*" />
-                        </div>
-                        <div class="post-icon" id="postClick" aria-label="Publish your post">
-                            <i class="bx bxs-paper-plane" style="margin-right: 10px;"></i>
-                            <p>Post</p>
-                        </div>
-                    </div>
-                    <!-- Display the preview of the selected input -->
-                    <div id="previewContainerPhoto" class="preview">
-                           
-                    </div>
-                    <!-- Display the preview of the selected input -->
-                    <div id="previewContainerVideo" class="preview">
-                           
-                    </div>
-                </form>
-            </section>
-            <!------------load new div---------------------->
-            <div id="added-post">
+                <!-- Top section with dynamic profile picture and post input -->
+                <div class="search-top">
+                    <img src="../images/profile.png" class="pfp myPFP" alt="Profile Picture">
+                    <input type="text" name="echos" id="echos" placeholder="What's on your mind?"
+                        aria-label="What's on your mind?">
+                </div>
 
+                <!-- Divider to separate the top and bottom sections -->
+                <hr>
+
+                <!-- Bottom section for post options -->
+                <div class="post-bottom">
+
+                    <!-- Option to upload a video -->
+                    <div class="post-icon" id="vid">
+                        <i class="bx bxs-videos mr-10"></i>
+                        <p>Video</p>
+                        <!-- Hidden file input for selecting video files -->
+                        <input type="file" class="form-control file-input" id="videoUpload" name="videoUpload"
+                            style="display: none;" accept="video/*" aria-label="Add a video">
+                    </div>
+
+                    <!-- Option to upload a photo -->
+                    <div class="post-icon" id="clickAddPhoto">
+                        <i class="bx bxs-photo-album mr-10"></i>
+                        <p>Photo</p>
+                        <!-- Hidden file input for selecting image files -->
+                        <input type="file" class="form-control file-input" id="photoUpload" name="photoUpload"
+                            style="display: none;" accept="image/*" aria-label="Add a photo">
+                    </div>
+
+                    <!-- Publish the post icon -->
+                    <div class="post-icon" id="postClick">
+                        <!-- Icon representing publishing action -->
+                        <i class="bx bxs-paper-plane mr-10"></i>
+                        <p>Post</p>
+                    </div>
+
+                </div>
+
+                <!-- Preview container for photo uploads -->
+                <div id="previewContainerPhoto" class="preview">
+                    <!-- Dynamic content will be added here to show photo previews using functional-post.js -->
+                </div>
+
+                <!-- Preview container for video uploads -->
+                <div id="previewContainerVideo" class="preview">
+                    <!-- Dynamic content will be added here to show video previews using functional-post.js -->
+                </div>
+            </section>
+
+            <!-- Section to dynamically load new posts -->
+            <div id="added-post">
+                <!-- New posts will be dynamically appended here using functional-post.js -->
             </div>
             <!------------hard coded friend-post---------------------->
-            <!-- Post 1 -->
+            <!-- Post 1: Represents a friend's social media post -->
             <section class="friend-post">
+                <!-- Top section of the post: Contains profile image, name, and post text -->
                 <div class="friend-post-top">
                     <article class="img-name">
+                        <!-- Friend's profile picture -->
                         <img src="../images/profile_1.png" alt="Ethan Williams' profile picture">
                         <div class="friends-title">
                             <header>
+                                <!-- Friend's name -->
                                 <p class="friends-name">Ethan Williams</p>
                             </header>
+                            <!-- Post caption -->
                             <article><span>Enjoying a sunny day at the beach. Life is good!</span></article>
                         </div>
                     </article>
-                    <div class="menu" aria-label="More options for this post">
+                    <!-- Post menu icon for additional options -->
+                    <div class="menu">
                         <i class="bx bx-dots-vertical-rounded"></i>
                     </div>
                 </div>
-                <div class="post-content" style="overflow-x: clip;">
+                <!-- Main content of the post: Image -->
+                <div class="post-content">
                     <img src="../images/post_3.png" alt="A sunny day at the beach, showcasing a beautiful view">
                 </div>
+                <!-- Post engagement details: Likes, comments, and shares -->
                 <div class="info">
                     <div class="emoji-img">
+                        <!-- Like section -->
                         <img src="../images/like.png" alt="Like emoji">
-
                         <p>You, Sarah Green, and 12K others</p>
                     </div>
                     <div class="comment">
+                        <!-- Number of comments and shares -->
                         <p>320 Comments</p>
                         <p>900 Shares</p>
                     </div>
                 </div>
                 <hr>
+                <!-- Post actions: Like, Comment, Share -->
                 <div class="post-bottom">
-                    <div class="post-icon" aria-label="Like this post">
+                    <div class="post-icon">
                         <i class="bx bxs-like"></i>
                         <p>Like</p>
                     </div>
-                    <div class="post-icon" aria-label="Comment on this post">
+                    <div class="post-icon">
                         <i class="bx bxs-chat"></i>
                         <p>Comments</p>
                     </div>
-                    <div class="post-icon" aria-label="Share this post">
+                    <div class="post-icon">
                         <i class="bx bxs-share-alt"></i>
                         <p>Share</p>
                     </div>
                 </div>
                 <hr>
+                <!-- Comment input section -->
                 <div class="comment-wrapper">
-                    <img src="../images/profile.png" id="myPFP" alt="Your profile picture">
+                    <!-- User's profile picture -->
+                    <img src="../images/profile.png" class="myPFP" alt="Your profile picture">
                     <div class="circle" aria-hidden="true"></div>
                     <div class="comment-search">
+                        <!-- Comment input field -->
                         <input type="text" placeholder="Write a comment..." aria-label="Write a comment">
                     </div>
                 </div>
             </section>
+
             <!------------hard coded friend-post---------------------->
-            <!-- Post 2 -->
+            <!-- Post 2: Represents a friend's social media post -->
             <section class="friend-post">
+                <!-- Top section of the post: Contains profile image, name, and post text -->
                 <div class="friend-post-top">
                     <div class="img-name">
+                        <!-- Friend's profile picture -->
                         <img src="../images/profile_2.png" alt="Olivia Smith's profile picture">
                         <div class="friends-title">
                             <header>
+                                <!-- Friend's name -->
                                 <p class="friends-name">Olivia Smith</p>
                             </header>
+                            <!-- Post caption -->
                             <article><span>Had an amazing time hiking this weekend. Nature is beautiful!</span>
                             </article>
                         </div>
                     </div>
-                    <div class="menu" aria-label="More options for this post">
+                    <!-- Post menu icon for additional options -->
+                    <div class="menu">
                         <i class="bx bx-dots-vertical-rounded"></i>
                     </div>
                 </div>
-                <div class="post-content" style="overflow-x: clip;">
+                <!-- Main content of the post: Image -->
+                <div class="post-content">
                     <img src="../images/post_5.png" alt="A breathtaking view of nature during a hiking trip">
                 </div>
+                <!-- Post engagement details: Likes, comments, and shares -->
                 <div class="info">
                     <div class="emoji-img">
+                        <!-- Like section -->
                         <img src="../images/like.png" alt="Like emoji">
-
                         <p>You, John Doe, and 18K others</p>
                     </div>
                     <div class="comment">
+                        <!-- Number of comments and shares -->
                         <p>500 Comments</p>
                         <p>1.1K Shares</p>
                     </div>
                 </div>
                 <hr>
+                <!-- Post actions: Like, Comment, Share -->
                 <div class="post-bottom">
-                    <div class="post-icon" aria-label="Like this post">
+                    <div class="post-icon">
                         <i class="bx bxs-like"></i>
                         <p>Like</p>
                     </div>
-                    <div class="post-icon" aria-label="Comment on this post">
+                    <div class="post-icon">
                         <i class="bx bxs-chat"></i>
                         <p>Comments</p>
                     </div>
-                    <div class="post-icon" aria-label="Share this post">
+                    <div class="post-icon">
                         <i class="bx bxs-share-alt"></i>
                         <p>Share</p>
                     </div>
                 </div>
                 <hr>
+                <!-- Comment input section -->
                 <div class="comment-wrapper">
-                    <img src="../images/profile.png" id="myPFP" alt="Your profile picture">
+                    <!-- User's profile picture -->
+                    <img src="../images/profile.png" class="myPFP" alt="Your profile picture">
                     <div class="circle" aria-hidden="true"></div>
                     <div class="comment-search">
+                        <!-- Comment input field -->
                         <input type="text" placeholder="Write a comment..." aria-label="Write a comment">
                     </div>
                 </div>
             </section>
+
             <!------------hard coded friend-post---------------------->
-            <!-- Post 3 -->
+            <!-- Post 3: Represents another friend's social media post -->
             <section class="friend-post">
+                <!-- Top section of the post: Contains profile image, name, and post text -->
                 <div class="friend-post-top">
                     <div class="img-name">
+                        <!-- Friend's profile picture -->
                         <img src="../images/profile_3.png" alt="Lucas Johnson's profile picture">
                         <div class="friends-title">
                             <header>
+                                <!-- Friend's name -->
                                 <p class="friends-name">Lucas Johnson</p>
                             </header>
+                            <!-- Post caption -->
                             <article><span>Can’t believe I finally completed this project. Super proud!</span></article>
                         </div>
                     </div>
-                    <div class="menu" aria-label="More options for this post">
+                    <!-- Post menu icon for additional options -->
+                    <div class="menu">
                         <i class="bx bx-dots-vertical-rounded"></i>
                     </div>
                 </div>
-                <div class="post-content" style="overflow-x: clip;">
+                <!-- Main content of the post: Image -->
+                <div class="post-content">
                     <img src="../images/post_1.png" alt="A completed project, with a proud accomplishment">
                 </div>
+                <!-- Post engagement details: Likes, comments, and shares -->
                 <div class="info">
                     <div class="emoji-img">
+                        <!-- Like section -->
                         <img src="../images/like.png" alt="Like emoji">
-
                         <p>You, Emma Watson, and 22K others</p>
                     </div>
                     <div class="comment">
+                        <!-- Number of comments and shares -->
                         <p>200 Comments</p>
                         <p>800 Shares</p>
                     </div>
                 </div>
                 <hr>
+                <!-- Post actions: Like, Comment, Share -->
                 <div class="post-bottom">
-                    <div class="post-icon" aria-label="Like this post">
+                    <div class="post-icon">
                         <i class="bx bxs-like"></i>
                         <p>Like</p>
                     </div>
-                    <div class="post-icon" aria-label="Comment on this post">
+                    <div class="post-icon">
                         <i class="bx bxs-chat"></i>
                         <p>Comments</p>
                     </div>
-                    <div class="post-icon" aria-label="Share this post">
+                    <div class="post-icon">
                         <i class="bx bxs-share-alt"></i>
                         <p>Share</p>
                     </div>
                 </div>
                 <hr>
+                <!-- Comment input section -->
                 <div class="comment-wrapper">
-                    <img src="../images/profile.png" id="myPFP" alt="Your profile picture">
+                    <!-- User's profile picture -->
+                    <img src="../images/profile.png" class="myPFP" alt="Your profile picture">
                     <div class="circle" aria-hidden="true"></div>
                     <div class="comment-search">
+                        <!-- Comment input field -->
                         <input type="text" placeholder="Write a comment..." aria-label="Write a comment">
                     </div>
                 </div>
             </section>
+
             <!------------hard coded friend-post---------------------->
-            <!-- Post 4 -->
+            <!-- Post 4: Represents another friend's social media post -->
             <section class="friend-post">
+                <!-- Top section of the post: Contains profile image, name, and post text -->
                 <div class="friend-post-top">
                     <div class="img-name">
+                        <!-- Friend's profile picture -->
                         <img src="../images/profile_4.png" alt="Ava Brown's profile picture">
                         <div class="friends-title">
                             <header>
+                                <!-- Friend's name -->
                                 <p class="friends-name">Ava Brown</p>
                             </header>
+                            <!-- Post caption -->
                             <article><span>Just finished reading an incredible book. Highly recommend it!</span>
                             </article>
                         </div>
                     </div>
-                    <div class="menu" aria-label="More options for this post">
+                    <!-- Post menu icon for additional options -->
+                    <div class="menu">
                         <i class="bx bx-dots-vertical-rounded"></i>
                     </div>
                 </div>
-                <div class="post-content" style="overflow-x: clip;">
+                <!-- Main content of the post: Image -->
+                <div class="post-content">
                     <img src="../images/post_4.png" alt="A book or image related to the post content">
                 </div>
+                <!-- Post engagement details: Likes, comments, and shares -->
                 <div class="info">
                     <div class="emoji-img">
+                        <!-- Like section -->
                         <img src="../images/like.png" alt="Like emoji">
-
                         <p>You, Mia Clark, and 15K others</p>
                     </div>
                     <div class="comment">
+                        <!-- Number of comments and shares -->
                         <p>350 Comments</p>
                         <p>1K Shares</p>
                     </div>
                 </div>
                 <hr>
+                <!-- Post actions: Like, Comment, Share -->
                 <div class="post-bottom">
-                    <div class="post-icon" aria-label="Like this post">
+                    <div class="post-icon">
                         <i class="bx bxs-like"></i>
                         <p>Like</p>
                     </div>
-                    <div class="post-icon" aria-label="Comment on this post">
+                    <div class="post-icon">
                         <i class="bx bxs-chat"></i>
                         <p>Comments</p>
                     </div>
-                    <div class="post-icon" aria-label="Share this post">
+                    <div class="post-icon">
                         <i class="bx bxs-share-alt"></i>
                         <p>Share</p>
                     </div>
                 </div>
                 <hr>
+                <!-- Comment input section -->
                 <div class="comment-wrapper">
-                    <img src="../images/profile.png" id="myPFP" alt="Your profile picture">
+                    <!-- User's profile picture -->
+                    <img src="../images/profile.png" class="myPFP" alt="Your profile picture">
                     <div class="circle" aria-hidden="true"></div>
                     <div class="comment-search">
+                        <!-- Comment input field -->
                         <input type="text" placeholder="Write a comment..." aria-label="Write a comment">
                     </div>
                 </div>
+                <!-- Visible comments section -->
                 <div class="comments-visible">
-                    <div class="comment-wrapper" style="margin-top: 15px">
+                    <div class="comment-wrapper">
+                        <!-- Commenter's profile picture -->
                         <img src="../images/profile_5.png" alt="Mia Clark's profile picture">
+                        <!-- Comment text -->
                         <div class="comment-search">
                             That book changed my life too. Amazing read!
                         </div>
@@ -401,260 +486,309 @@
                 </div>
             </section>
 
+
             <!------------hard coded friend-post---------------------->
-            <!-- Post 5 -->
+            <!-- Post 5: Represents another friend's social media post -->
             <section class="friend-post">
+                <!-- Top section of the post: Contains profile image, name, and post text -->
                 <div class="friend-post-top">
                     <div class="img-name">
+                        <!-- Friend's profile picture -->
                         <img src="../images/profile_5.png" alt="Mason Davis' profile picture">
                         <div class="friends-title">
                             <header>
+                                <!-- Friend's name -->
                                 <p class="friends-name">Mason Davis</p>
                             </header>
+                            <!-- Post caption -->
                             <article><span>Throwback to an unforgettable road trip last summer. 🚗</span></article>
                         </div>
                     </div>
-                    <div class="menu" aria-label="More options for this post">
+                    <!-- Post menu icon for additional options -->
+                    <div class="menu">
                         <i class="bx bx-dots-vertical-rounded"></i>
                     </div>
                 </div>
-                <div class="post-content" style="overflow-x: clip;">
+                <!-- Main content of the post: Image -->
+                <div class="post-content">
                     <img src="../images/post_7.png" alt="A photo from the road trip showing the scenery">
                 </div>
+                <!-- Post engagement details: Likes, comments, and shares -->
                 <div class="info">
                     <div class="emoji-img">
+                        <!-- Like section -->
                         <img src="../images/like.png" alt="Like emoji">
-
                         <p>You, Sophia Taylor, and 20K others</p>
                     </div>
                     <div class="comment">
+                        <!-- Number of comments and shares -->
                         <p>430 Comments</p>
                         <p>1.5K Shares</p>
                     </div>
                 </div>
                 <hr>
+                <!-- Post actions: Like, Comment, Share -->
                 <div class="post-bottom">
-                    <div class="post-icon" aria-label="Like this post">
+                    <div class="post-icon">
                         <i class="bx bxs-like"></i>
                         <p>Like</p>
                     </div>
-                    <div class="post-icon" aria-label="Comment on this post">
+                    <div class="post-icon">
                         <i class="bx bxs-chat"></i>
                         <p>Comments</p>
                     </div>
-                    <div class="post-icon" aria-label="Share this post">
+                    <div class="post-icon">
                         <i class="bx bxs-share-alt"></i>
                         <p>Share</p>
                     </div>
                 </div>
                 <hr>
+                <!-- Comment input section -->
                 <div class="comment-wrapper">
-                    <img src="../images/profile.png" id="myPFP" alt="Your profile picture">
+                    <!-- User's profile picture -->
+                    <img src="../images/profile.png" class="myPFP" alt="Your profile picture">
                     <div class="circle" aria-hidden="true"></div>
                     <div class="comment-search">
+                        <!-- Comment input field -->
                         <input type="text" placeholder="Write a comment..." aria-label="Write a comment">
                     </div>
                 </div>
+                <!-- Visible comments section -->
                 <div class="comments-visible">
-                    <div class="comment-wrapper" style="margin-top: 15px">
+                    <div class="comment-wrapper">
+                        <!-- Commenter's profile picture -->
                         <img src="../images/profile_6.png" alt="Sophia Taylor's profile picture">
+                        <!-- Comment text -->
                         <div class="comment-search">
                             Looks like an amazing trip! Great memories. 🚀
                         </div>
                     </div>
                 </div>
             </section>
+
             <!------------hard coded friend-post---------------------->
-            <!-- Post 6 -->
+            <!-- Post 6: Another friend's post about their dining experience -->
             <section class="friend-post">
+                <!-- Top section: Profile details and post caption -->
                 <div class="friend-post-top">
                     <div class="img-name">
+                        <!-- Profile picture -->
                         <img src="../images/profile_6.png" alt="Isabella Miller's profile picture">
                         <div class="friends-title">
                             <header>
+                                <!-- Friend's name -->
                                 <p class="friends-name">Isabella Miller</p>
                             </header>
+                            <!-- Caption text -->
                             <article><span>Finally tried that new restaurant in town. 10/10 experience!</span></article>
                         </div>
                     </div>
-                    <div class="menu" aria-label="More options for this post">
+                    <!-- Options menu -->
+                    <div class="menu">
                         <i class="bx bx-dots-vertical-rounded"></i>
                     </div>
                 </div>
-                <div class="post-content" style="overflow-x: clip;">
+                <!-- Post content: Main image -->
+                <div class="post-content">
                     <img src="../images/post_6.png" alt="Image from the new restaurant with a delicious dish">
                 </div>
+                <!-- Engagement details: Likes, comments, and shares -->
                 <div class="info">
                     <div class="emoji-img">
+                        <!-- Likes section -->
                         <img src="../images/like.png" alt="Like emoji">
-
                         <p>You, Ava Brown, and 17K others</p>
                     </div>
                     <div class="comment">
+                        <!-- Number of comments and shares -->
                         <p>250 Comments</p>
                         <p>750 Shares</p>
                     </div>
                 </div>
                 <hr>
+                <!-- Post actions: Like, Comment, Share -->
                 <div class="post-bottom">
-                    <div class="post-icon" aria-label="Like this post">
+                    <div class="post-icon">
                         <i class="bx bxs-like"></i>
                         <p>Like</p>
                     </div>
-                    <div class="post-icon" aria-label="Comment on this post">
+                    <div class="post-icon">
                         <i class="bx bxs-chat"></i>
                         <p>Comments</p>
                     </div>
-                    <div class="post-icon" aria-label="Share this post">
+                    <div class="post-icon">
                         <i class="bx bxs-share-alt"></i>
                         <p>Share</p>
                     </div>
                 </div>
                 <hr>
+                <!-- Comment input section -->
                 <div class="comment-wrapper">
-                    <img src="../images/profile.png" id="myPFP" alt="Your profile picture">
+                    <!-- User's profile picture -->
+                    <img src="../images/profile.png" class="myPFP" alt="Your profile picture">
                     <div class="circle" aria-hidden="true"></div>
                     <div class="comment-search">
+                        <!-- Input field for adding a new comment -->
                         <input type="text" placeholder="Write a comment..." aria-label="Write a comment">
                     </div>
                 </div>
+                <!-- Visible comments section -->
                 <div class="comments-visible">
-                    <div class="comment-wrapper" style="margin-top: 15px">
+                    <div class="comment-wrapper">
+                        <!-- Commenter's profile picture -->
                         <img src="../images/profile_7.png" alt="User's profile picture">
+                        <!-- Comment text -->
                         <div class="comment-search">
                             That place is on my list! Can't wait to try it. 🍽️
                         </div>
                     </div>
                 </div>
             </section>
+
         </div>
 
-        <!------------------right------------------>
-
+        <!-- Right section for contacts and related information -->
         <div class="right">
 
+            <!-- Contacts Wrapper -->
             <section class="right-warpper">
 
+                <!-- Contacts Header -->
                 <div class="contact-title">
-
                     <header>
                         <h2>Contacts</h2>
                     </header>
-
                     <article class="contact-icon">
-
+                        <!-- Search and Options Icons -->
                         <i class="bx bx-search"></i>
                         <i class="bx bx-dots-vertical-rounded"></i>
-
                     </article>
                 </div>
 
-                <!------------------Conactos------------------>
+                <!-- Contacts Section -->
                 <section class="mensagens">
-                    <!------------link for the real chat---------------------->
+                    <!-- Link for the fuctional Chat -->
                     <div class="contact">
-                        <a href="chat.html" style="text-decoration: none;" aria-label="Chat with Other User">
-                            <button class="contact-btn">
+                        <a href="chat.html" aria-label="Chat with Other User">
+                            <div class="contact-btn">
                                 <div class="flex-center">
+                                    <!-- Dynamic profile picture of the other user -->
                                     <img id="otherUserPFP" src="../images/profile.png" alt="Picture of Other User">
+                                    <!-- Dynamic name of the other user -->
                                     <p id="otherUserName"></p>
                                 </div>
+                                <!-- Placeholder for last message preview -->
                                 <div class="last-message"></div>
-                                <div class="notification"><i class="bx bxs-paper-plane" aria-hidden="true"></i></div>
-
-                            </button>
+                                <!-- Notification icon for unread messages -->
+                                <div class="notification">
+                                    <i class="bx bxs-paper-plane" aria-hidden="true"></i>
+                                </div>
+                            </div>
                         </a>
                     </div>
-                    <!------------link for the fake chats---------------------->
+                    <!-- Fake Chat Links 1 -->
+                    <!-- Each fake chat is a static link to simulate chat functionality -->
                     <div class="contact">
-                        <a href="fake_chat1.html" style="text-decoration: none;" aria-label="Chat with Ethan Williams">
-                            <button class="contact-btn">
+                        <a href="fake_chat1.html" aria-label="Chat with Ethan Williams">
+                            <div class="contact-btn">
+                                <!-- Profile picture and name for static fake chats -->
                                 <div class="flex-center">
                                     <img src="../images/profile_1.png" alt="Profile picture of Ethan Williams">
                                     <p>Ethan Williams</p>
                                 </div>
                                 <i class="bx bxs-paper-plane" aria-hidden="true"></i>
-                            </button>
+                            </div>
                         </a>
                     </div>
-
+                    <!-- Fake Chat Links 2 -->
                     <div class="contact">
-                        <a href="fake_chat2.html" style="text-decoration: none;" aria-label="Chat with Olivia Smith">
-                            <button class="contact-btn">
+                        <a href="fake_chat2.html" aria-label="Chat with Olivia Smith">
+                            <div class="contact-btn">
+                                <!-- Profile picture and name for static fake chats -->
                                 <div class="flex-center">
                                     <img src="../images/profile_2.png" alt="Profile picture of Olivia Smith">
                                     <p>Olivia Smith</p>
                                 </div>
                                 <i class="bx bxs-paper-plane" aria-hidden="true"></i>
-                            </button>
+                            </div>
                         </a>
                     </div>
-
+                    <!-- Fake Chat Links 3 -->
                     <div class="contact">
-                        <a href="fake_chat3.html" style="text-decoration: none;" aria-label="Chat with Lucas Johnson">
-                            <button class="contact-btn">
+                        <a href="fake_chat3.html" aria-label="Chat with Lucas Johnson">
+                            <div class="contact-btn">
+                                <!-- Profile picture and name for static fake chats -->
                                 <div class="flex-center">
                                     <img src="../images/profile_3.png" alt="Profile picture of Lucas Johnson">
                                     <p>Lucas Johnson</p>
                                 </div>
                                 <i class="bx bxs-paper-plane" aria-hidden="true"></i>
-                            </button>
+                            </div>
                         </a>
                     </div>
-
+                    <!-- Fake Chat Links 4 -->
                     <div class="contact">
-                        <a href="fake_chat4.html" style="text-decoration: none;" aria-label="Chat with Ava Brown">
-                            <button class="contact-btn">
+                        <a href="fake_chat4.html" aria-label="Chat with Ava Brown">
+                            <div class="contact-btn">
+                                <!-- Profile picture and name for static fake chats -->
                                 <div class="flex-center">
                                     <img src="../images/profile_4.png" alt="Profile picture of Ava Brown">
                                     <p>Ava Brown</p>
                                 </div>
                                 <i class="bx bxs-paper-plane" aria-hidden="true"></i>
-                            </button>
+                            </div>
                         </a>
                     </div>
-
+                    <!-- Fake Chat Links 5 -->
                     <div class="contact">
-                        <a href="fake_chat5.html" style="text-decoration: none;" aria-label="Chat with Mason Davis">
-                            <button class="contact-btn">
+                        <a href="fake_chat5.html" aria-label="Chat with Mason Davis">
+                            <div class="contact-btn">
+                                <!-- Profile picture and name for static fake chats -->
                                 <div class="flex-center">
                                     <img src="../images/profile_5.png" alt="Profile picture of Mason Davis">
                                     <p>Mason Davis</p>
                                 </div>
                                 <i class="bx bxs-paper-plane" aria-hidden="true"></i>
-                            </button>
+                            </div>
                         </a>
                     </div>
-
+                    <!-- Fake Chat Links 6 -->
                     <div class="contact">
-                        <a href="fake_chat6.html" style="text-decoration: none;" aria-label="Chat with Isabella Miller">
-                            <button class="contact-btn">
+                        <a href="fake_chat6.html" aria-label="Chat with Isabella Miller">
+                            <div class="contact-btn">
+                                <!-- Profile picture and name for static fake chats -->
                                 <div class="flex-center">
                                     <img src="../images/profile_6.png" alt="Profile picture of Isabella Miller">
                                     <p>Isabella Miller</p>
                                 </div>
                                 <i class="bx bxs-paper-plane" aria-hidden="true"></i>
-                            </button>
+                            </div>
                         </a>
                     </div>
-
+                    <!-- Fake Chat Links 7 -->
                     <div class="contact">
-                        <a href="fake_chat7.html" style="text-decoration: none;" aria-label="Chat with James Anderson">
-                            <button class="contact-btn">
+                        <a href="fake_chat7.html" aria-label="Chat with James Anderson">
+                            <div class="contact-btn">
+                                <!-- Profile picture and name for static fake chats -->
                                 <div class="flex-center">
                                     <img src="../images/profile_7.png" alt="Profile picture of James Anderson">
                                     <p>James Anderson</p>
                                 </div>
                                 <i class="bx bxs-paper-plane" aria-hidden="true"></i>
-                            </button>
+                            </div>
                         </a>
                     </div>
                 </section>
+            </section>
         </div>
     </div>
-    </div>
+    <!-- Main script for application functionality -->
     <script src="../scripts/script.js"></script>
+
+    <!-- Utility script containing reusable helper functions -->
     <script src="../scripts/utils.js"></script>
+
+    <!-- Script handling functional and interactive aspects of posts -->
     <script src="../scripts/functional-post.js"></script>
 </body>
 

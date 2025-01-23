@@ -3,60 +3,75 @@
 <!-- Fake chat for presentation -->
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Web</title>
+    <meta charset="UTF-8"> <!-- Sets the character encoding for the document -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Ensures compatibility with IE browsers -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Sets viewport for responsive design -->
+    <title>Chat</title> <!-- Title of the web page -->
+
     <!-- CSS -->
-    <link rel="stylesheet" href="../styles/style.css" />
-    <link rel="stylesheet" href="../styles/chat.css" />
+    <link rel="stylesheet" href="../styles/style.css"> <!-- Links the global stylesheet for shared styles -->
+        <link rel="stylesheet" href="../styles/chat.css"> <!-- Links a stylesheet specific to the Chat page -->
+
     <!-- Boxicons -->
-    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet"> <!-- Includes an external icon library for consistent UI elements -->
 </head>
 
 <body>
-    <!-- Container for sidebar/menu -->
+    <!-- Alert div for displaying error or success messages to the user -->
+    <div id="alert">
+        <span class="closebtn">&times;</span> <!-- Button to close the alert -->
+        <div></div> <!-- Placeholder for alert content -->
+    </div>
+
+    <!-- Sidebar navigation menu -->
     <nav id="sidebar-container">
         <div class="logo">
-            <i class="bx bx-menu menu-icon"></i>
-            <span class="logo-name">Echo Link</span>
+            <i class="bx bx-menu menu-icon"></i> <!-- Icon used for toggling the menu -->
+            <span class="logo-name">Echo Link</span> <!-- Displays the name of the application -->
         </div>
+
+        <!-- Dark mode toggle button -->
         <div>
-            <button id="dark-mode-toggle" class="bx toggle-button"><i id="moon-sun" class="bx bxs-moon"></i></button>
+            <button id="dark-mode-toggle" class="bx toggle-button" aria-label="switch theme" type="button">
+                <i id="moon-sun" class="bx bxs-moon"></i> <!-- Icon for toggling between light and dark modes -->
+            </button>
         </div>
-        <!-- In the menu -->
+
+        <!-- Sidebar menu items -->
         <div class="sidebar">
             <div class="logo">
-                <i class="bx bx-menu menu-icon"></i>
-                <span class="logo-name">Echo Link</span>
+                <i class="bx bx-menu menu-icon"></i> <!-- Repeated menu icon for sidebar consistency -->
+                <span class="logo-name">Echo Link</span> <!-- Sidebar branding -->
             </div>
 
             <div class="sidebar-content">
+                <!-- List of primary navigation links -->
                 <ul class="lists">
                     <li class="list">
                         <a href="index.html" class="nav-link">
-                            <i class="bx bx-home-alt icon"></i>
+                            <i class="bx bx-home-alt icon"></i> <!-- Icon representing the Dashboard -->
                             <span class="link">Dashboard</span>
                         </a>
                     </li>
                     <li class="list">
                         <a href="chat.html" class="nav-link">
-                            <i class="bx bx-message-rounded icon"></i>
+                            <i class="bx bx-message-rounded icon"></i> <!-- Icon representing the Messages page -->
                             <span class="link">Messages</span>
                         </a>
                     </li>
                     <li class="list">
                         <a href="aboutus.html" class="nav-link">
-                            <i class="bx bx-info-circle icon"></i>
+                            <i class="bx bx-info-circle icon"></i> <!-- Icon for the About Us page -->
                             <span class="link">About us</span>
                         </a>
                     </li>
                 </ul>
 
+                <!-- Logout link -->
                 <ul class="lists">
                     <li class="list">
                         <a href="#" onclick="logout()" class="nav-link">
-                            <i class="bx bx-log-out icon"></i>
+                            <i class="bx bx-log-out icon"></i> <!-- Icon for logging out -->
                             <span class="link">Logout</span>
                         </a>
                     </li>
@@ -64,118 +79,140 @@
             </div>
         </div>
     </nav>
-    <!-- Menu Overlay -->
+    <!-- Menu overlay for toggling sidebar in responsive designs -->
     <section class="overlay"></section>
 
-    <!------------main--------------->
+    <!-- Main content area of the page -->
 
     <div class="main">
-        <!------------chat-box---------------------->
+        <!-- Chat box container for displaying chat UI -->
         <div class="chat-box">
             <div class="chat-wrapper">
                 <div class="massages">
                     <section>
+                        <!-- Example of a selected contact with dynamic user info -->
                         <div class="contact">
-                            <a href="chat.html" style="text-decoration: none;">
-                                <button class="contact-btn">
+                            <!-- Link to the chat page for the selected contact -->
+                            <a href="chat.html">
+                                <div class="contact-btn">
                                     <div class="flex-center">
-                                        <img src="../images/profile_6.png" id="otherUserPFP" />
+                                        <!-- Profile picture and dynamic name of the selected contact -->
+                                        <img src="../images/profile_6.png" id="otherUserPFP"
+                                            alt="Other user profile picture">
                                         <p id="otherUserName"></p>
                                     </div>
-                                </button>
+                                </div>
                             </a>
                         </div>
+                        <!-- Static contacts -->
                         <div class="contact">
-                            <a href="fake_chat1.html" style="text-decoration: none;">
-                                <button class="contact-btn">
+                            <!-- Contact includes a link to their corresponding chat page -->
+                            <a href="fake_chat1.html">
+                                <div class="contact-btn">
                                     <div class="flex-center">
-                                        <img src="../images/profile_1.png" />
-                                        <p>Ethan Williams</p>
+                                        <img src="../images/profile_1.png"
+                                            alt="Ethan Williams profile picture"><!-- Static img -->
+                                        <p>Ethan Williams</p> <!-- Static contact name -->
                                     </div>
-                                </button>
+                                </div>
                             </a>
                         </div>
-
+                        <!-- Static contacts -->
                         <div class="contact">
-                            <a href="fake_chat2.html" style="text-decoration: none;">
-                                <button class="contact-btn">
+                            <!-- Contact includes a link to their corresponding chat page -->
+                            <a href="fake_chat2.html" >
+                                <div class="contact-btn">
                                     <div class="flex-center">
-                                        <img src="../images/profile_2.png" />
-                                        <p>Olivia Smith</p>
+                                        <img src="../images/profile_2.png"
+                                            alt="Olivia Smith profile picture"><!-- Static img -->
+                                        <p>Olivia Smith</p> <!-- Static contact name -->
                                     </div>
-                                </button>
+                                </div>
                             </a>
                         </div>
-
+                        <!-- Static contacts -->
                         <div class="contact">
-                            <a href="fake_chat3.html" style="text-decoration: none;">
-                                <button class="contact-btn">
+                            <!-- Contact includes a link to their corresponding chat page -->
+                            <a href="fake_chat3.html" >
+                                <div class="contact-btn">
                                     <div class="flex-center">
-                                        <img src="../images/profile_3.png" />
-                                        <p>Lucas Johnson</p>
+                                        <img src="../images/profile_3.png"
+                                            alt="Lucas Johnson profile picture"><!-- Static img -->
+                                        <p>Lucas Johnson</p> <!-- Static contact name -->
                                     </div>
-                                </button>
+                                </div>
                             </a>
                         </div>
-
+                        <!-- Static contacts -->
                         <div class="contact selected">
-                            <a href="fake_chat4.html" style="text-decoration: none;">
-                                <button class="contact-btn">
+                            <!-- Contact includes a link to their corresponding chat page -->
+                            <a href="fake_chat4.html" >
+                                <div class="contact-btn">
                                     <div class="flex-center">
-                                        <img src="../images/profile_4.png" />
-                                        <p>Ava Brown</p>
+                                        <img src="../images/profile_4.png"
+                                            alt="Ava Brown profile picture"><!-- Static img -->
+                                        <p>Ava Brown</p> <!-- Static contact name -->
                                     </div>
-                                </button>
+                                </div>
                             </a>
                         </div>
-
+                        <!-- Static contacts -->
                         <div class="contact">
-                            <a href="fake_chat5.html" style="text-decoration: none;">
-                                <button class="contact-btn">
+                            <!-- Contact includes a link to their corresponding chat page -->
+                            <a href="fake_chat5.html" >
+                                <div class="contact-btn">
                                     <div class="flex-center">
-                                        <img src="../images/profile_5.png" />
-                                        <p>Mason Davis</p>
+                                        <img src="../images/profile_5.png"
+                                            alt="Mason Davis profile picture"><!-- Static img -->
+                                        <p>Mason Davis</p><!-- Static contact name -->
                                     </div>
-                                </button>
+                                </div>
                             </a>
                         </div>
-
+                        <!-- Static contacts -->
                         <div class="contact">
-                            <a href="fake_chat6.html" style="text-decoration: none;">
-                                <button class="contact-btn">
+                            <!-- Contact includes a link to their corresponding chat page -->
+                            <a href="fake_chat6.html" >
+                                <div class="contact-btn">
                                     <div class="flex-center">
-                                        <img src="../images/profile_6.png" />
-                                        <p>Isabella Miller</p>
+                                        <img src="../images/profile_6.png"
+                                            alt="Isabella Miller profile picture"><!-- Static img -->
+                                        <p>Isabella Miller</p><!-- Static contact name -->
                                     </div>
-                                </button>
+                                </div>
                             </a>
                         </div>
-
+                        <!-- Static contacts -->
                         <div class="contact">
-                            <a href="fake_chat7.html" style="text-decoration: none;">
-                                <button class="contact-btn">
+                            <!-- Contact includes a link to their corresponding chat page -->
+                            <a href="fake_chat7.html" >
+                                <div class="contact-btn">
                                     <div class="flex-center">
-                                        <img src="../images/profile_7.png" />
-                                        <p>James Anderson</p>
+                                        <img src="../images/profile_7.png" alt="James Anderson profile picture">
+                                        <!-- Static img -->
+                                        <p>James Anderson</p><!-- Static contact name -->
                                     </div>
-                                </button>
+                                </div>
                             </a>
                         </div>
                     </section>
-                    <a href="index.html" style="text-decoration: none;">
+                    <!-- Back option to navigate to home page from the chat UI -->
+                    <a href="index.html" >
                         <div class="back-option">
-                            <button class="contact-btn">
+                            <div class="contact-btn">
                                 <div class="flex-center">
-                                    <i class="bx bx-left-arrow-alt"></i>
-                                    <p> Back</p>
+                                    <i class="bx bx-left-arrow-alt"></i> <!-- Back icon -->
+                                    <p> Back</p> <!-- Back text -->
                                 </div>
-                            </button>
+                            </div>
                         </div>
                     </a>
-                </div>                    
+                </div>
+                <!-- Vertical divider between contact list and main chat -->
                 <hr class="vertical">
+                <!-- Main chat area displaying hard coded messages and input -->
                 <div class="main-chat">
-                    <div class="text">
+                    <section class="text chat-scroll">
                         <div>
                             <div class="message-box-left">Hey, have you checked out the new project updates? 😊</div>
                         </div>
@@ -218,14 +255,22 @@
                         <div class="right-box">
                             <div class="message-box-right">Sounds like a plan. Talk soon! 👍</div>
                         </div>
-                    </div>
-                    <hr style="margin-bottom: 10px;">
-                    <form action="#" id="frm2" method="post" enctype="application/x-www-form-urlencoded">
+                    </section>
+                    <!-- Horizontal divider for spacing -->
+                    <hr class="mb-10">
+
+                    <!-- Message input form -->
+                    <form>
                         <div class="message-bar-wrapper">
-                            <img src="../images/profile.png" class="icon">
-                            <box-icon name='paper-plane' type='solid' ></box-icon>
-                            <input class="message-bar" type="text" name="echos" id="echos" placeholder="Message..."><i class="bx bxs-paper-plane send-icon"></i></input>
-                            
+                             <!-- Dynamic user's profile icon next to the message input -->
+                            <img src="../images/profile.png" class="icon" alt=" Your Profile Picture">
+
+                            <!-- Input field for entering a new message -->
+                            <input class="message-bar" type="text" name="echos" id="echos" placeholder="Message...">
+
+                            <!-- Send message button with an icon -->
+                            <i class="bx bxs-paper-plane send-icon"></i>
+                            <button type="submit" style="display: none;"></button>
                         </div>
                     </form>
                 </div>
@@ -233,6 +278,7 @@
 
         </div>
     </div>
+    <!-- Main script for application functionality -->
     <script src="../scripts/script.js"></script>
 </body>
 
