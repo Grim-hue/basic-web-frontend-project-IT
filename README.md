@@ -62,14 +62,5 @@ This README file, documenting the purpose, objectives, and structure of the proj
 3. Navigate through the pages using the links provided in the navigation menu.
 4. For dynamic features (e.g., chat functionality), ensure JavaScript is enabled in your browser.
 
-## Future Improvements
-
-- Consolidate duplicate chat pages (`fake_chatX.html`) to make the project more modular.
-- Add server-side functionality to make the chat and login pages functional.
-- Improve the accessibility of the project by further testing and implementing ARIA roles.
-- Enhance the design by adding CSS animations and transitions.
-
----
-
 **Created by André Freitas Carlos Arvela**
 
